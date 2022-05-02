@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from '../Header/Header';
 
-const Home = () => {
+const About = () => {
     return (
         <div>
             <Header />
@@ -9,4 +9,4 @@ const Home = () => {
     );
 };
 
-export default Home;
+export default About;

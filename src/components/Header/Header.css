@@ -1,0 +1,13 @@
+.btn-hover:hover {
+  background-color: white;
+  transition-duration: 500;
+  color: black;
+  transition: linear;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  transform: rotateY(360deg);
+}
+.btn-hover {
+  transition: ease-in-out;
+  transition: transform 0.5s;
+}
