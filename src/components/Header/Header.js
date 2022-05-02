@@ -12,14 +12,25 @@ import { signOut } from 'firebase/auth';
 
 const Header = () => {
     const [openUser, setOpenUser] = useState(false)
-    const [user, loading] = useAuthState(auth)
+    const [user, loading] = useAuthState(auth);
+    const [nav, setNav] = useState(true);
     const [signInWithGoogle, googleUser, googleLoading, error] = useSignInWithGoogle(auth);
 
     const handleSignInWithGoogle = () => {
         signInWithGoogle()
     }
+    const handleNavBg = () => {
+        if (window.scrollY > 80) {
+            setNav(false)
+        }
+        else {
+            setNav(true)
+        }
+    }
+    window.addEventListener('scroll', handleNavBg)
+
     return (<Slide top>
-        <nav className='bg-black h-[80px]'>
+        <nav className={`${nav ? 'bg-transparent' : 'bg-black'} h-[80px] sticky top-0`}>
             <div className=' flex w-[90%] mx-auto justify-between items-center'>
                 {/* 1st part of nav */}
                 {/* logo */}
@@ -39,10 +50,11 @@ const Header = () => {
 
                     <div>
                         {!user ?
-                            <button
+                            <Link to='/login'><button
                                 onClick={handleSignInWithGoogle}
                                 className='btn-hover border-2 px-4 py-1'>Login
                             </button>
+                            </Link>
                             :
                             <div
 
