@@ -1,9 +1,10 @@
 import React from 'react';
+import DashNav from '../DashNav/DashNav';
 
 const ManageInventories = () => {
     return (
         <div>
-            ManageInventories
+            <DashNav />
         </div>
     );
 };

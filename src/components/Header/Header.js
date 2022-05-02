@@ -6,6 +6,7 @@ import './Header.css'
 import { useAuthState, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretDown, faGaugeHigh, faRightToBracket } from '@fortawesome/free-solid-svg-icons';
+import { Slide } from 'react-reveal';
 
 
 const Header = () => {
@@ -13,11 +14,10 @@ const Header = () => {
     const [user, loading] = useAuthState(auth)
     const [signInWithGoogle, googleUser, googleLoading, error] = useSignInWithGoogle(auth);
 
-    const handleSignIn = () => {
-        console.log('clicked');
+    const handleSignInWithGoogle = () => {
         signInWithGoogle()
     }
-    return (
+    return (<Slide top>
         <nav className='bg-black h-[80px]'>
             <div className=' flex w-[90%] mx-auto justify-between items-center'>
                 {/* 1st part of nav */}
@@ -39,11 +39,12 @@ const Header = () => {
                     <div>
                         {!user ?
                             <button
-                                onClick={handleSignIn}
+                                onClick={handleSignInWithGoogle}
                                 className='btn-hover border-2 px-4 py-1'>Login
                             </button>
                             :
                             <div
+
                                 onClick={() => setOpenUser(!openUser)}
                                 className='transform  duration-500 hover:scale-75 flex items-center'>
                                 <img
@@ -57,18 +58,24 @@ const Header = () => {
                 </div>
 
             </div>
-            {openUser && <nav className='absolute right-0 top-[70px] bg-black border-2 rounded-md text-white p-4'>
-                <div className='w-full text-center'>
-                    <img className='w-[100px] mx-auto rounded-full' src={user?.photoURL} alt="" />
-                    <p className='text-lg font-semibold'>{user?.displayName}</p>
-                    <p className=' text-xs mb-3'>{user?.email}</p>
-                </div>
-                <hr className=' mb-8' />
-                <p><FontAwesomeIcon icon={faGaugeHigh} /> Dashboard</p>
-                <p><FontAwesomeIcon icon={faRightToBracket} /> Logout</p>
 
-            </nav>}
+            {/* user nav started  */}
+            {openUser && <Slide right cascade>
+                <nav className='absolute right-0 top-[70px] bg-black border-2 rounded-md text-white p-4'>
+                    <div className='w-full text-center'>
+                        <img className='w-[100px] mx-auto rounded-full' src={user?.photoURL} alt="" />
+                        <p className='text-lg font-semibold'>{user?.displayName}</p>
+                        <p className=' text-xs mb-3'>{user?.email}</p>
+                    </div>
+                    <hr className=' mb-8' />
+                    <Link to='/admin' className='hover:text-gray-500 block'><FontAwesomeIcon icon={faGaugeHigh} /> Dashboard</Link>
+                    <button
+                        className='hover:text-gray-500 cursor-pointer block'><FontAwesomeIcon icon={faRightToBracket} /> Logout</button>
+
+                </nav>
+            </Slide>}
         </nav>
+    </Slide>
     );
 };
 

@@ -3,6 +3,7 @@ import './App.css';
 import About from './components/About/About';
 import Blog from './components/Blog/Blog';
 import Home from './components/Home/Home';
+import ManageInventories from './components/ManageInventories/ManageInventories';
 import Shop from './components/Shop/Shop';
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
         <Route path='/shop' element={<Shop />} />
         <Route path='/blog' element={<Blog />} />
         <Route path='/About' element={<About />} />
+        <Route path='/admin' element={<ManageInventories />} />
       </Routes>
     </div>
   );
