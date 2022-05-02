@@ -7,6 +7,7 @@ import { useAuthState, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretDown, faGaugeHigh, faRightToBracket } from '@fortawesome/free-solid-svg-icons';
 import { Slide } from 'react-reveal';
+import { signOut } from 'firebase/auth';
 
 
 const Header = () => {
@@ -61,7 +62,7 @@ const Header = () => {
 
             {/* user nav started  */}
             {openUser && <Slide right cascade>
-                <nav className='absolute right-0 top-[70px] bg-black border-2 rounded-md text-white p-4'>
+                <nav className={`${user?.email ? 'absolute' : 'hidden'} right-0 top-[70px] bg-black border-2 rounded-md text-white p-4`}>
                     <div className='w-full text-center'>
                         <img className='w-[100px] mx-auto rounded-full' src={user?.photoURL} alt="" />
                         <p className='text-lg font-semibold'>{user?.displayName}</p>
@@ -70,6 +71,7 @@ const Header = () => {
                     <hr className=' mb-8' />
                     <Link to='/admin' className='hover:text-gray-500 block'><FontAwesomeIcon icon={faGaugeHigh} /> Dashboard</Link>
                     <button
+                        onClick={() => signOut(auth)}
                         className='hover:text-gray-500 cursor-pointer block'><FontAwesomeIcon icon={faRightToBracket} /> Logout</button>
 
                 </nav>

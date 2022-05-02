@@ -1,9 +1,11 @@
 import { faAdd, faBars, faHome, faList, faList12, faListCheck, faRightFromBracket, faX } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { signOut } from 'firebase/auth';
 import React, { useState } from 'react';
 import { Slide } from 'react-reveal';
 import { Link } from 'react-router-dom';
 import logo from '../../assets/images/logo.png'
+import auth from '../../firebase.init';
 
 const DashNav = () => {
     const [open, setOpen] = useState(false)
@@ -24,10 +26,12 @@ const DashNav = () => {
                         <div className={`text-white mt-[120px] text-lg pl-6 flex flex-col`}>
                             <div className='flex flex-col gap-6'>
                                 <Link to='/'><FontAwesomeIcon icon={faHome} /></Link>
-                                <Link to='/'><FontAwesomeIcon icon={faListCheck} /></Link>
-                                <Link to='/'><FontAwesomeIcon icon={faAdd} /></Link>
+                                <Link to='/admin'><FontAwesomeIcon icon={faListCheck} /></Link>
+                                <Link to='/add'><FontAwesomeIcon icon={faAdd} /></Link>
                             </div>
-                            <button className='absolute bottom-6 text-white'><FontAwesomeIcon icon={faRightFromBracket} /></button>
+                            <button
+                                onClick={() => signOut(auth)}
+                                className='absolute bottom-6 text-white'><FontAwesomeIcon icon={faRightFromBracket} /></button>
                         </div>
 
                     </div>
@@ -41,10 +45,12 @@ const DashNav = () => {
                         className='text-white absolute top-4 right-6 text-xs' icon={faX} />}
                     <div className=' mt-[120px] text-lg pl-4 flex flex-col gap-6'>
                         <Link to='/'>Home</Link>
-                        <Link to='/'>Manage Items</Link>
-                        <Link to='/'>Add Item</Link>
+                        <Link to='/admin'>Manage Items</Link>
+                        <Link to='/add'>Add Item</Link>
                     </div>
-                    <button className=' absolute bottom-6 text-lg pl-4'>Logout</button>
+                    <button
+                        onClick={() => signOut(auth)}
+                        className=' absolute bottom-6 text-lg pl-4'>Logout</button>
 
                 </div>
                 <img className={`h-[50px] z-50 ${open ? 'absolute' : 'hidden'} top-12 left-4`} src={logo} alt="" />
