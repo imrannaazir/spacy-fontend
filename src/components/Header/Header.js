@@ -1,9 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../assets/images/logo.png'
+import auth from '../../firebase.init';
 import './Header.css'
+import { useAuthState, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+
 
 const Header = () => {
+    const [user, loading] = useAuthState(auth)
+    const [signInWithGoogle, googleUser, googleLoading, error] = useSignInWithGoogle(auth);
+
+    const handleSignIn = () => {
+        console.log('clicked');
+        signInWithGoogle()
+    }
     return (
         <nav className='bg-black h-[80px]'>
             <div className=' flex w-[90%] mx-auto justify-between items-center'>
@@ -24,7 +34,17 @@ const Header = () => {
                     </div>
 
                     <div>
-                        <button className='btn-hover border-2 px-4 py-1'>Login</button>
+                        {!user ?
+                            <button
+                                onClick={handleSignIn}
+                                className='btn-hover border-2 px-4 py-1'>Login
+                            </button>
+                            :
+                            <img
+                                className=' w-14 rounded-full'
+                                src={user?.photoURL} alt="" />
+                        }
+
                     </div>
                 </div>
 
