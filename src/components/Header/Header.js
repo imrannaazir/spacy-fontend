@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import logo from '../../assets/images/logo.png'
 import auth from '../../firebase.init';
 import './Header.css'
-import { useAuthState, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretDown, faGaugeHigh, faRightToBracket } from '@fortawesome/free-solid-svg-icons';
 import { Slide } from 'react-reveal';
@@ -12,13 +12,9 @@ import { signOut } from 'firebase/auth';
 
 const Header = () => {
     const [openUser, setOpenUser] = useState(false)
-    const [user, loading] = useAuthState(auth);
     const [nav, setNav] = useState(true);
-    const [signInWithGoogle, googleUser, googleLoading, error] = useSignInWithGoogle(auth);
+    const [user, loading] = useAuthState(auth);
 
-    const handleSignInWithGoogle = () => {
-        signInWithGoogle()
-    }
     const handleNavBg = () => {
         if (window.scrollY > 80) {
             setNav(false)
@@ -29,6 +25,9 @@ const Header = () => {
     }
     window.addEventListener('scroll', handleNavBg)
 
+    if (loading) {
+        return <div className=' h-[100px] w-[100x]'> Loading.. </div>
+    }
     return (<Slide top>
         <nav className={`${nav ? 'bg-transparent' : 'bg-black'} h-[80px] sticky top-0`}>
             <div className=' flex w-[90%] mx-auto justify-between items-center'>
@@ -51,7 +50,7 @@ const Header = () => {
                     <div>
                         {!user ?
                             <Link to='/login'><button
-                                onClick={handleSignInWithGoogle}
+
                                 className='btn-hover border-2 px-4 py-1'>Login
                             </button>
                             </Link>
