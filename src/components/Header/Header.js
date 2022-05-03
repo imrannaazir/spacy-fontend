@@ -29,7 +29,7 @@ const Header = () => {
         return <div className=' h-[100px] w-[100x]'> Loading.. </div>
     }
     return (<Slide top>
-        <nav className={`${nav ? 'bg-transparent' : 'bg-black'} h-[80px] sticky top-0`}>
+        <nav className={`${nav ? 'bg-transparent' : 'bg-black'} h-[80px] sticky top-0 z-50`}>
             <div className=' flex w-[90%] mx-auto justify-between items-center'>
                 {/* 1st part of nav */}
                 {/* logo */}

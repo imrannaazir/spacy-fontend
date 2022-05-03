@@ -1,0 +1,44 @@
+[
+  {
+    "name": "Falcon 9",
+    "img": "https://i.ibb.co/pn82L8c/falcon9.jpg",
+    "description": "Falcon 9 is a reusable, two-stage rocket designed and manufactured by SpaceX for the reliable and safe transport of people and payloads into Earth orbit and beyond. Falcon 9 is the world’s first orbital class reusable rocket. Reusability allows SpaceX to refly the most expensive parts of the rocket, which in turn drives down the cost of space access.",
+    "quantity": 10,
+    "supplier": "SpaceX"
+  },
+  {
+    "name": "Falcon Heavy",
+    "img": "https://i.ibb.co/KLgbPBT/falcon-heavy.jpg",
+    "description": "Falcon Heavy is the most powerful operational rocket in the world by a factor of two. With the ability to lift into orbit nearly 64 metric tons (141,000 lb) Falcon Heavy can lift more than twice the payload of the next closest operational vehicle, the Delta IV Heavy. Falcon Heavy is composed of three Falcon 9 nine-engine cores whose 27 Merlin engines together generate more than 5 million pounds of thrust at liftoff, equal to approximately eighteen 747 aircraft.",
+    "quantity": 4,
+    "supplier": "SpaceX"
+  },
+  {
+    "name": "DRAGON",
+    "img": "https://i.ibb.co/Tc1Mnq3/dragons.jpg",
+    "description": "The Dragon spacecraft is capable of carrying up to 7 passengers to and from Earth orbit, and beyond. It is the only spacecraft currently flying that is capable of returning significant amounts of cargo to Earth, and is the first private spacecraft to take humans to the space station.",
+    "quantity": 8,
+    "supplier": "SpaceX"
+  },
+  {
+    "name": "Starship SN15",
+    "img": "https://i.ibb.co/FWMPr0d/starship-sn15.jpg",
+    "description": "SpaceX’s Starship spacecraft and Super Heavy rocket (collectively referred to as Starship) represent a fully reusable transportation system designed to carry both crew and cargo to Earth orbit, the Moon, Mars and beyond. Starship will be the world’s most powerful launch vehicle ever developed, with the ability to carry in excess of 100 metric tonnes to Earth orbit.",
+    "quantity": 9,
+    "supplier": "Starship SN15"
+  },
+  {
+    "name": "New Shepard",
+    "img": "https://i.ibb.co/gSt6bcg/new-shepherd.jpg",
+    "description": "New Shepard is a vertical-takeoff, vertical-landing, crew-rated suborbital launch vehicle developed by Blue Origin as a commercial system for suborbital space tourism. ",
+    "quantity": 7,
+    "supplier": "Blue Origin"
+  },
+  {
+    "name": "New Glenn",
+    "img": "https://i.ibb.co/GFFBz7c/new-gleen.jpg",
+    "description": "Named after pioneering astronaut John Glenn, New Glenn is a single configuration heavy-lift launch vehicle capable of carrying people and payloads routinely to Earth orbit and beyond. Featuring a reusable first stage built for 25 missions, New Glenn will build a road to space.",
+    "quantity": 12,
+    "supplier": "Blue Origin"
+  }
+]
