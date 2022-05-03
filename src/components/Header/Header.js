@@ -73,7 +73,7 @@ const Header = () => {
 
             {/* user nav started  */}
             {openUser && <Slide right cascade>
-                <nav className={`${user?.email ? 'absolute' : 'hidden'} right-0 top-[70px] bg-black border-2 rounded-md text-white p-4`}>
+                <nav className={`${user?.email ? 'absolute' : 'hidden'} right-0 top-[70px] ${nav ? 'bg-transparent' : 'bg-black'} border-2 rounded-md text-white p-4`}>
                     <div className='w-full text-center'>
                         <img className='w-[100px] mx-auto rounded-full' src={user?.photoURL} alt="" />
                         <p className='text-lg font-semibold'>{user?.displayName}</p>

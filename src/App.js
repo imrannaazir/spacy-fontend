@@ -10,6 +10,7 @@ import Home from './components/Home/Home';
 import ManageInventories from './components/ManageInventories/ManageInventories';
 import Shop from './components/Shop/Shop';
 import bg from './assets/videos/bg.mp4'
+import Update from './components/Update/Update';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
           <Route path='/blog' element={<Blog />} />
           <Route path='/About' element={<About />} />
           <Route path='/admin' element={<RequireAuth><ManageInventories /></RequireAuth>} />
+          <Route path='/update/:id' element={<RequireAuth><Update /></RequireAuth>} />
           <Route path='/add' element={<Add />} />
           <Route path='/login' element={<Login />} />
         </Routes>

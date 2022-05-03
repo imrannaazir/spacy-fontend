@@ -10,7 +10,7 @@ const Home = () => {
     const [rockets, setRockets] = useState([])
     useEffect(() => {
         (async function () {
-            const { data } = await axios.get('rockets.json')
+            const { data } = await axios.get('http://localhost:5000/rockets')
             setRockets(data);
         })()
     }, [])
