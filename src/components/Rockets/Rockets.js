@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
 import { Slide, Zoom } from 'react-reveal';
+import { useNavigate } from 'react-router-dom';
 import '../../components/Header/Header.css'
 
-const Rockets = ({ rocket: { name, img, description, quantity, supplier } }) => {
+const Rockets = ({ rocket: { name, img, description, quantity, supplier, _id } }) => {
+    const navigate = useNavigate()
     const [details, setDetails] = useState(false)
-    console.log(details);
+    const navigateToUpdate = id => {
+        navigate(`/update/${id}`)
+    }
 
     return (
         <Zoom>
@@ -26,7 +30,9 @@ const Rockets = ({ rocket: { name, img, description, quantity, supplier } }) => 
                         <p className=' text-2xl font-bold border-b-2 text-transparent  bg-clip-text bg-gradient-to-r from-gray-700 to-gray-300'>Supplier Name: {supplier}</p>
                         <div>
                             <span className=' text-xl font-bold'>Quantity:{quantity}</span>
-                            <button className='btn-hover border-2 px-4 py-1 ml-8'>Update</button>
+                            <button
+                                onClick={() => navigateToUpdate(_id)}
+                                className='btn-hover border-2 px-4 py-1 ml-8'>Update</button>
                         </div>
                     </div>
                 </Slide>

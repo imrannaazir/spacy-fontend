@@ -1,4 +1,4 @@
-import { faAdd, faBars, faHome, faList, faList12, faListCheck, faRightFromBracket, faX } from '@fortawesome/free-solid-svg-icons';
+import { faAdd, faBars, faHome, faListCheck, faRightFromBracket, faX } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { signOut } from 'firebase/auth';
 import React, { useState } from 'react';
@@ -39,7 +39,7 @@ const DashNav = () => {
 
 
                 </div>
-                <div className={`h-screen ${open ? 'fixed' : 'hidden'} w-[150px] bg-black left-[75px] text-white`}>
+                <div className={`h-screen ${open ? 'fixed' : 'hidden'} w-[150px] bg-gradient-to-r from-black to-gray-800 left-[75px] text-white`}>
                     {open && <FontAwesomeIcon
                         onClick={() => setOpen(!open)}
                         className='text-white absolute top-4 right-6 text-xs' icon={faX} />}
