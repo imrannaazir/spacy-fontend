@@ -53,7 +53,7 @@ const DashNav = () => {
                         className=' absolute bottom-6 text-lg pl-4'>Logout</button>
 
                 </div>
-                <img className={`h-[50px] z-50 ${open ? 'absolute' : 'hidden'} top-12 left-4`} src={logo} alt="" />
+                <img className={`h-[50px] z-50 ${open ? 'fixed' : 'hidden'} top-12 left-4`} src={logo} alt="" />
 
             </div>
         </Slide>

@@ -11,6 +11,7 @@ import ManageInventories from './components/ManageInventories/ManageInventories'
 import Shop from './components/Shop/Shop';
 import bg from './assets/videos/bg.mp4'
 import Update from './components/Update/Update';
+import { Toaster } from 'react-hot-toast';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
 
         src={bg}></video>
       <div>
+        <Toaster />
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/home' element={<Home />} />
