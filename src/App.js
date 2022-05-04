@@ -12,6 +12,7 @@ import Shop from './components/Shop/Shop';
 import bg from './assets/videos/bg.mp4'
 import Update from './components/Update/Update';
 import { Toaster } from 'react-hot-toast';
+import MyItems from './components/MyItems/MyItems';
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
           <Route path='/About' element={<About />} />
           <Route path='/admin' element={<RequireAuth><ManageInventories /></RequireAuth>} />
           <Route path='/update/:id' element={<RequireAuth><Update /></RequireAuth>} />
+          <Route path='/my-items' element={<RequireAuth><MyItems /></RequireAuth>} />
           <Route path='/add' element={<Add />} />
           <Route path='/login' element={<Login />} />
         </Routes>

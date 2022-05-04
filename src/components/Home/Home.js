@@ -11,7 +11,8 @@ const Home = () => {
     useEffect(() => {
         (async function () {
             const { data } = await axios.get('http://localhost:5000/rockets')
-            setRockets(data);
+            const rockets = data.slice(0, 6)
+            setRockets(rockets);
         })()
     }, [])
 

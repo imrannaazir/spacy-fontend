@@ -1,4 +1,4 @@
-import { faAdd, faBars, faHome, faListCheck, faRightFromBracket, faX } from '@fortawesome/free-solid-svg-icons';
+import { faAdd, faBars, faHome, faListCheck, faRightFromBracket, faUserCheck, faX } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { signOut } from 'firebase/auth';
 import React, { useState } from 'react';
@@ -27,6 +27,7 @@ const DashNav = () => {
                             <div className='flex flex-col gap-6'>
                                 <Link to='/'><FontAwesomeIcon icon={faHome} /></Link>
                                 <Link to='/admin'><FontAwesomeIcon icon={faListCheck} /></Link>
+                                <Link to='/my-items'><FontAwesomeIcon icon={faUserCheck} /></Link>
                                 <Link to='/add'><FontAwesomeIcon icon={faAdd} /></Link>
                             </div>
                             <button
@@ -43,9 +44,10 @@ const DashNav = () => {
                     {open && <FontAwesomeIcon
                         onClick={() => setOpen(!open)}
                         className='text-white absolute top-4 right-6 text-xs' icon={faX} />}
-                    <div className=' mt-[120px] text-lg pl-4 flex flex-col gap-6'>
+                    <div className=' mt-[120px] text-lg pl-4 flex flex-col gap-6 '>
                         <Link to='/'>Home</Link>
                         <Link to='/admin'>Manage Items</Link>
+                        <Link to='/my-items'>My Item</Link>
                         <Link to='/add'>Add Item</Link>
                     </div>
                     <button
