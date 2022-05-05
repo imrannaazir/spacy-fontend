@@ -2,10 +2,11 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
 import { Slide, Zoom } from 'react-reveal';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import DashNav from '../DashNav/DashNav';
 
 const Update = () => {
+    const navigate = useNavigate();
     const { id } = useParams();
     const [rocket, setRocket] = useState({});
     useEffect(() => {
@@ -18,8 +19,7 @@ const Update = () => {
     const { name, img, description, quantity, supplier, _id } = rocket;
 
     const handleDelivered = () => {
-        const { quantity, ...rest } = rocket;
-        console.log(quantity, rest);
+        const { quantity, _id, ...rest } = rocket;
         const updatedRocket = {
             quantity: quantity - 1, ...rest
         }
@@ -28,7 +28,9 @@ const Update = () => {
         }
         else {
             (async function () {
-                const { data } = await axios.put('http://localhost:5000/rockets', updatedRocket)
+                console.log(updatedRocket);
+                const { data } = await axios.put(`http://localhost:5000/rockets/${_id}`, updatedRocket)
+                navigate('/');
                 console.log(data);
             })();
             setRocket(updatedRocket)
@@ -39,7 +41,7 @@ const Update = () => {
     const handleUpdate = e => {
         e.preventDefault();
         const addQuantity = e.target.quantity.value;
-        const { quantity, ...rest } = rocket;
+        const { quantity, _id, ...rest } = rocket;
         const newQuantity = parseInt(quantity) + parseInt(addQuantity)
         const updatedRocket = {
             quantity: newQuantity, ...rest
