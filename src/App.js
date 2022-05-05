@@ -13,6 +13,7 @@ import bg from './assets/videos/bg.mp4'
 import Update from './components/Update/Update';
 import { Toaster } from 'react-hot-toast';
 import MyItems from './components/MyItems/MyItems';
+import NotFound from './components/NotFound/NotFound';
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
           <Route path='/my-items' element={<RequireAuth><MyItems /></RequireAuth>} />
           <Route path='/add' element={<Add />} />
           <Route path='/login' element={<Login />} />
+          <Route path='*' element={<NotFound />} />
         </Routes>
         <Footer />
       </div>
