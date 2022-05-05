@@ -42,7 +42,7 @@ const Header = () => {
 
                     <div className=' flex gap-4'>
                         <Link className=' transform duration-500 transition hover:scale-125 hover:border-b-2 h-[25px] my-auto' to='/'>Home</Link>
-                        <Link className=' transform duration-500 transition hover:scale-125 hover:border-b-2 h-[25px] my-auto' to='/shop'>Shop</Link>
+                        <a className=' transform duration-500 transition hover:scale-125 hover:border-b-2 h-[25px] my-auto' href='/#rockets'>Explore</a>
                         <Link className=' transform duration-500 transition hover:scale-125 hover:border-b-2 h-[25px] my-auto' to='/blog'>Blog</Link>
                         <Link className=' transform duration-500 transition hover:scale-125 hover:border-b-2 h-[25px] my-auto' to='/about'>About</Link>
                     </div>
@@ -51,7 +51,7 @@ const Header = () => {
                         {!user ?
                             <Link to='/login'><button
 
-                                className='btn-hover border-2 px-4 py-1'>Login
+                                className='border-2 px-4 py-1 hover:scale-110 hover:bg-black duration-500 hover:font-bold'>Login
                             </button>
                             </Link>
                             :

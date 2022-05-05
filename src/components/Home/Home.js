@@ -30,7 +30,7 @@ const Home = () => {
                         <div className='z-50 w-[47%] h-full flex flex-col justify-center items-start  ml-auto gap-6'>
                             <p className=' text-3xl text-white'>Welcome to</p>
                             <p className='font-bold text-transparent text-6xl bg-clip-text bg-gradient-to-r from-gray-700 to-white uppercase '>world's biggest Rocket stocking hub</p>
-                            <a href="/#rockets"><button className='btn-hover border-2 px-4 py-1 text-white'>Explore</button></a>
+                            <a href="/#rockets"><button className=' hover:scale-110 hover:bg-black duration-500 hover:font-bold border-2 px-4 py-1 text-white'>Explore</button></a>
                         </div></Slide>
 
                 </div>

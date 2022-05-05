@@ -1,4 +1,3 @@
-import { faRoadLock } from '@fortawesome/free-solid-svg-icons';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
@@ -28,6 +27,10 @@ const Update = () => {
             return toast.error('Stock out!')
         }
         else {
+            (async function () {
+                const { data } = await axios.put('http://localhost:5000/rockets', updatedRocket)
+                console.log(data);
+            })();
             setRocket(updatedRocket)
             toast.success('Successfully delivered!')
         }
@@ -41,6 +44,11 @@ const Update = () => {
         const updatedRocket = {
             quantity: newQuantity, ...rest
         };
+        (async function () {
+            console.log(updatedRocket);
+            const { data } = await axios.put(`http://localhost:5000/rockets/${_id}`, updatedRocket)
+            console.log(data);
+        })();
         setRocket(updatedRocket);
         e.target.quantity.value = ''
         toast.success(`Successfully added in stock${' ' + addQuantity + ' ' + '"' + name + '"'}`)
@@ -81,13 +89,13 @@ const Update = () => {
                                     <div>
                                         <button
                                             onClick={handleDelivered}
-                                            className=' px-4 py-2 border-2 border-black'>Delivered</button>
+                                            className=' px-4 py-2 border-2 border-black hover:scale-110 duration-500 hover:font-bold'>Delivered</button>
                                     </div>
                                     <form
                                         onSubmit={handleUpdate}
                                         className='flex'>
                                         <input className=' w-24 pl-2' type="number" min='0' name="quantity" placeholder='Quantity' required />
-                                        <button type='submit' className=' px-4 py-2 border-2 border-black'>Update</button>
+                                        <button type='submit' className=' px-4 py-2 border-2 border-black hover:scale-110 duration-500 hover:font-bold'>Update</button>
                                     </form>
                                 </div>
                             </div>

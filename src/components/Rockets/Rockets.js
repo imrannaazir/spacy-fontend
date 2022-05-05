@@ -32,7 +32,7 @@ const Rockets = ({ rocket: { name, img, description, quantity, supplier, _id } }
                             <span className=' text-xl font-bold'>Quantity:{quantity}</span>
                             <button
                                 onClick={() => navigateToUpdate(_id)}
-                                className='btn-hover border-2 px-4 py-1 ml-8'>Update</button>
+                                className='border-2 px-4 py-1 ml-8 hover:scale-105 duration-500 hover:bg-black'>Update</button>
                         </div>
                     </div>
                 </Slide>

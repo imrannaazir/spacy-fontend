@@ -40,7 +40,7 @@ const DashNav = () => {
 
 
                 </div>
-                <div className={`h-screen ${open ? 'fixed' : 'hidden'} w-[150px] bg-gradient-to-r from-black to-gray-800 left-[75px] text-white`}>
+                <div className={`h-screen ${open ? 'fixed' : 'hidden'} w-[150px] bg-gradient-to-r from-black to-gray-800 left-[75px] text-white z-50`}>
                     {open && <FontAwesomeIcon
                         onClick={() => setOpen(!open)}
                         className='text-white absolute top-4 right-6 text-xs' icon={faX} />}
