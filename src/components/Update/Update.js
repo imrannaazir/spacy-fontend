@@ -52,6 +52,7 @@ const Update = () => {
             console.log(data);
         })();
         setRocket(updatedRocket);
+        navigate('/')
         e.target.quantity.value = ''
         toast.success(`Successfully added in stock${' ' + addQuantity + ' ' + '"' + name + '"'}`)
     }

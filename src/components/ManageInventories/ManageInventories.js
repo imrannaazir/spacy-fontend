@@ -11,7 +11,7 @@ const ManageInventories = () => {
             setRockets(data);
         })();
     }, [])
-    console.log(rockets);
+
     return (
         <div>
             <DashNav />
@@ -20,35 +20,35 @@ const ManageInventories = () => {
 
             </div>
 
-            <div class="px-8 py-6 w-[100%]">
-                <div class="grid gap-8 items-start justify-center w-[100%]">
-                    <div class="relative group">
-                        <div class="absolute inset-0 bg-gradient-to-r from-pink-600 to-purple-600 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
+            <div className="px-8 py-6 w-[100%]">
+                <div className="grid gap-8 items-start justify-center w-[100%]">
+                    <div className="relative group">
+                        <div className="absolute inset-0 bg-gradient-to-r from-pink-600 to-purple-600 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
                         <div
 
 
                             className=' flex justify-center items-center flex-col rounded-lg   relative  my-auto bg-black text-white'>
 
-                            <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
-                                <table class="w-[1200px] text-sm text-left text-gray-500 dark:text-gray-400">
-                                    <thead class="text-xs text-white uppercase bg-black">
+                            <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
+                                <table className="w-[1200px] text-sm text-left text-gray-500 dark:text-gray-400">
+                                    <thead className="text-xs text-white uppercase bg-black">
                                         <tr>
-                                            <th scope="col" class="px-6 py-3">
+                                            <th scope="col" className="px-6 py-3">
                                                 Rocket name :
                                             </th>
-                                            <th scope="col" class="px-6 py-3">
+                                            <th scope="col" className="px-6 py-3">
                                                 Photo
                                             </th>
-                                            <th scope="col" class="px-6 py-3">
+                                            <th scope="col" className="px-6 py-3">
                                                 Supplier
                                             </th>
-                                            <th scope="col" class="px-6 py-3">
+                                            <th scope="col" className="px-6 py-3">
                                                 Quantity
                                             </th>
-                                            <th scope="col" class="px-6 py-3">
+                                            <th scope="col" className="px-6 py-3">
                                                 Edit
                                             </th>
-                                            <th scope="col" class="px-6 py-3">
+                                            <th scope="col" className="px-6 py-3">
                                                 Delete
                                             </th>
 

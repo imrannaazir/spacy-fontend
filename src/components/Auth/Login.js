@@ -1,18 +1,14 @@
-import React, { useEffect } from 'react';
 import Header from '../Header/Header';
 import google from '../../assets/images/google.png'
 import { useAuthState, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init'
 import { useLocation, useNavigate } from 'react-router-dom';
 import Loading from '../Loading/Loading';
+import axios from 'axios';
 
 const Login = () => {
     const [user, loading] = useAuthState(auth)
-    useEffect(() => {
-        if (user) {
-            navigate(from);
-        }
-    }, [user]);
+
     const navigate = useNavigate()
     const location = useLocation()
     let from = location.state?.from?.pathname || "/"
@@ -28,6 +24,19 @@ const Login = () => {
     }
     if (error) {
         console.log(error);
+    }
+    if (user) {
+        const postToken = async () => {
+            const email = user?.email;
+            if (email) {
+                console.log('kothai ami', email);
+                const { data } = await axios.post('http://localhost:5000/login', { email })
+                localStorage.setItem('accessToken', data.accessToken)
+            }
+        }
+        postToken()
+
+        navigate(from, { replace: true });
     }
 
     return (

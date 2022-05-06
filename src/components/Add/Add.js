@@ -3,10 +3,20 @@ import { Slide } from 'react-reveal';
 import DashNav from '../DashNav/DashNav';
 import logo from '../../assets/images/logo.png'
 import axios from 'axios';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
+import Loading from '../Loading/Loading';
+import toast from 'react-hot-toast';
+import { useNavigate } from 'react-router-dom';
+
 
 const Add = () => {
-
+    const [user, loading] = useAuthState(auth);
+    const navigate = useNavigate();
     //handle submit function
+    if (loading) {
+        <Loading />
+    }
     const handleSubmit = e => {
         e.preventDefault();
         const newRocket = {
@@ -14,11 +24,16 @@ const Add = () => {
             description: e.target.description.value,
             img: e.target.img.value,
             supplier: e.target.supplier.value,
-            quantity: e.target.quantity.value
+            quantity: e.target.quantity.value,
+            email: user.email
         };
         (async function () {
             const { data } = await axios.post('http://localhost:5000/rockets', newRocket)
+
         })()
+        e.target.reset();
+        navigate('/');
+        toast.success('Successfully uploaded!')
     }
     return (
         <div>
@@ -29,10 +44,10 @@ const Add = () => {
                     <p className='text-5xl font-semibold text-transparent bg-clip-text bg-gradient-to-tr  from-white to-gray-500 '>ADD NEW ITEMS -</p>
 
                 </div>
-                <div class="px-8 py-20 w-[20%] mx-auto">
-                    <div class="grid gap-8 items-start justify-center w-[75%] mx-auto">
-                        <div class="relative group">
-                            <div class="absolute -inset-0.5 bg-gradient-to-r from-pink-600 to-purple-600 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
+                <div className="px-8 py-20 w-[20%] mx-auto">
+                    <div className="grid gap-8 items-start justify-center w-[75%] mx-auto">
+                        <div className="relative group">
+                            <div className="absolute -inset-0.5 bg-gradient-to-r from-pink-600 to-purple-600 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
                             <form
                                 onSubmit={handleSubmit}
                                 className=' flex justify-center items-center flex-col w-[380px] rounded-lg   relative  my-auto bg-black text-white'>

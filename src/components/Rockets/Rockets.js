@@ -14,12 +14,12 @@ const Rockets = ({ rocket: { name, img, description, quantity, supplier, _id } }
         <Zoom>
             <div
 
-                className=' w-[80%] mx-auto border-2 border-white relative'>
+                className=' w-[80%] mx-auto border-2 border-white rounded-lg relative'>
                 <img
 
                     onMouseEnter={() => setDetails(true)}
 
-                    className='w-[98%] mx-auto my-auto mt-[1%] h-[98%]  z-10' src={img} alt="" />
+                    className='w-[98%] rounded-lg mx-auto my-auto mt-[1%] h-[98%]  z-10' src={img} alt="" />
                 <Slide bottom cascade>
                     <div
                         onMouseLeave={() => setDetails(false)}

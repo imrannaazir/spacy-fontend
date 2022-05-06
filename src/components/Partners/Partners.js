@@ -23,13 +23,13 @@ const Partners = () => {
         cssEase: "linear"
     };
     return (
-        <div className=' w-[80%] mx-auto'>
-            <p className=' text-5xl text-transparent bg-clip-text bg-gradient-to-t from-white to-gray-700 text-center'>Our Partners</p>
+        <div className=' w-[80%] mx-auto mt-20'>
+            <p className=' text-4xl text-transparent bg-clip-text bg-gradient-to-t from-white to-gray-700 text-center font-semibold'>OUR PARTNERS</p>
 
             <div>
                 <Slider {...settings} className='flex'>
                     {
-                        logos.map(logo => <div className=''><img src={logo} alt="" /></div>)
+                        logos.map(logo => <div key={logo} className=''><img src={logo} alt="" /></div>)
                     }
                 </Slider>
             </div>
