@@ -6,6 +6,7 @@ import { Bounce, Flip, Slide, Zoom } from 'react-reveal';
 import '../../components/Header/Header.css'
 import axios from 'axios';
 import Rockets from '../Rockets/Rockets';
+import Partners from '../Partners/Partners';
 const Home = () => {
     const [rockets, setRockets] = useState([])
     useEffect(() => {
@@ -47,6 +48,7 @@ const Home = () => {
                         }
                     </div>
                 </div>
+                <Partners />
                 <Footer />
             </div>
         </div>

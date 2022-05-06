@@ -5,7 +5,6 @@ import Add from './components/Add/Add';
 import Login from './components/Auth/Login';
 import RequireAuth from './components/Auth/RequireAuth';
 import Blog from './components/Blog/Blog';
-import Footer from './components/Footer/Footer';
 import Home from './components/Home/Home';
 import ManageInventories from './components/ManageInventories/ManageInventories';
 import Shop from './components/Shop/Shop';
@@ -40,7 +39,7 @@ function App() {
           <Route path='/login' element={<Login />} />
           <Route path='*' element={<NotFound />} />
         </Routes>
-        <Footer />
+
       </div>
     </div>
   );

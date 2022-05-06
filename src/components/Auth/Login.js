@@ -4,6 +4,7 @@ import google from '../../assets/images/google.png'
 import { useAuthState, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init'
 import { useLocation, useNavigate } from 'react-router-dom';
+import Loading from '../Loading/Loading';
 
 const Login = () => {
     const [user, loading] = useAuthState(auth)
@@ -20,12 +21,10 @@ const Login = () => {
         signInWithGoogle()
     }
     if (googleLoading) {
-        return <div className='text-center h-screen '><Header />
-            <span className='px-4 py-2 bg-yellow-100 rounded-lg shadow-lg'>Loading...</span></div>
+        return <Loading />
     }
     if (loading) {
-        return <div className='text-center h-screen '>
-            <span className='px-4 py-2 bg-yellow-100 rounded-lg shadow-lg'>Loading...</span></div>
+        return <Loading />
     }
     if (error) {
         console.log(error);
