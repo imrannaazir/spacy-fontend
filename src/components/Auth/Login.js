@@ -29,7 +29,6 @@ const Login = () => {
         const postToken = async () => {
             const email = user?.email;
             if (email) {
-                console.log('kothai ami', email);
                 const { data } = await axios.post('http://localhost:5000/login', { email })
                 localStorage.setItem('accessToken', data.accessToken)
             }

@@ -10,7 +10,11 @@ const MyItems = () => {
     const [rockets, setRockets] = useState([]);
     useEffect(() => {
         (async function () {
-            const { data } = await axios.get(`http://localhost:5000/rockets?email=${user.email}`)
+            const { data } = await axios.get(`http://localhost:5000/myrockets?email=${user.email}`, {
+                headers: {
+                    authorization: `Bearer ${localStorage.getItem('accessToken')}`
+                }
+            })
             setRockets(data);
         })();
     }, [user.email])
