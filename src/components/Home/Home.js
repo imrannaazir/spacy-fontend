@@ -49,6 +49,17 @@ const Home = () => {
                         }
                     </div>
                 </div>
+                <div className=' w-[80%] mx-auto bg-gradient-to-r from-purple-400 to-pink-400 rounded-md p-6 flex items-center justify-between my-8'>
+                    <div>
+                        <p>Wanna be part of us?</p>
+                        <p className=' text-3xl  text-black font-mono font-bold'>Join to SPACEY as an intern & explore the Universe.</p>
+                    </div>
+                    <div >
+                        <button className='bg-black text-white px-6 py-2 rounded-full hover:scale-110 duration-500'>
+                            Join Now
+                        </button>
+                    </div>
+                </div>
                 <VideoSection />
                 <Partners />
                 <Footer />
