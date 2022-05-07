@@ -6,12 +6,26 @@ import DashNav from '../DashNav/DashNav';
 
 const ManageInventories = () => {
     const [rockets, setRockets] = useState([]);
+    const [pageCount, setPageCount] = useState(0);
+    const [limit, setLimit] = useState(10);
+    const [page, setPage] = useState(0);
+
     useEffect(() => {
         (async function () {
-            const { data } = await axios.get('http://localhost:5000/rockets')
+            const { data } = await axios.get(`http://localhost:5000/rockets?page=${page}&limit=${limit}`)
             setRockets(data);
+
         })();
-    }, [])
+    }, [limit, page])
+
+    useEffect(() => {
+        (async function () {
+            const { data } = await axios.get('http://localhost:5000/rocketsCount')
+            const count = data.count;
+            const pages = Math.ceil(count / limit);
+            setPageCount(pages);
+        })();
+    }, [limit])
 
     return (
         <div>
@@ -67,6 +81,26 @@ const ManageInventories = () => {
                                             }
                                         </tbody>
                                     </table>
+
+
+
+                                    <div className='pagination my-3 text-right'>
+                                        {
+                                            [...Array(pageCount).keys()].map(number =>
+                                                <button
+                                                    onClick={() => setPage(number)}
+                                                    className={`px-2 py-1 m-1 rounded-md bg-white text-black ${page === number && 'bg-purple-600'}`}
+                                                    key={number}>{number + 1}
+
+                                                </button>)
+                                        }
+                                        <select className='bg-purple-600 p-1 rounded-lg mr-2' onChange={e => setLimit(e.target.value)}>
+                                            <option value="5">5</option>
+                                            <option value="10" selected>10</option>
+                                            <option value="15">15</option>
+                                            <option value="20">20</option>
+                                        </select>
+                                    </div>
                                 </div>
 
                             </div>
@@ -74,6 +108,8 @@ const ManageInventories = () => {
                     </div>
                 </div>
             </Slide>
+
+
 
         </div>
     );

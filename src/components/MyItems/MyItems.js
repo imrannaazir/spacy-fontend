@@ -3,7 +3,7 @@ import { signOut } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Slide } from 'react-reveal';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import DashNav from '../DashNav/DashNav';
 import MyItem from '../MyItem/MyItem';
@@ -53,37 +53,42 @@ const MyItems = () => {
                                 className=' flex justify-center items-center flex-col rounded-lg   relative  my-auto bg-black text-white'>
 
                                 <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
-                                    <table className="w-[1200px] text-sm text-left text-gray-500 dark:text-gray-400">
-                                        <thead className="text-xs text-white uppercase bg-black">
-                                            <tr>
-                                                <th scope="col" className="px-6 py-3">
-                                                    Rocket name :
-                                                </th>
-                                                <th scope="col" className="px-6 py-3">
-                                                    Photo
-                                                </th>
-                                                <th scope="col" className="px-6 py-3">
-                                                    Supplier
-                                                </th>
-                                                <th scope="col" className="px-6 py-3">
-                                                    Quantity
-                                                </th>
-                                                <th scope="col" className="px-6 py-3">
-                                                    Edit
-                                                </th>
-                                                <th scope="col" className="px-6 py-3">
-                                                    Delete
-                                                </th>
 
-                                            </tr>
-                                        </thead>
-                                        <tbody>
+                                    {rockets.length === 0 ?
+                                        <div className=' p-4'>
+                                            <span className='text-gray-400'>Sorry!! You haven't added any rockets yet. </span><Link className='underline' to='/add'>Add New</Link></div> :
+                                        <table className="w-[1200px] text-sm text-left text-gray-500 dark:text-gray-400">
+                                            <thead className="text-xs text-white uppercase bg-black">
+                                                <tr>
+                                                    <th scope="col" className="px-6 py-3">
+                                                        Rocket name :
+                                                    </th>
+                                                    <th scope="col" className="px-6 py-3">
+                                                        Photo
+                                                    </th>
+                                                    <th scope="col" className="px-6 py-3">
+                                                        Supplier
+                                                    </th>
+                                                    <th scope="col" className="px-6 py-3">
+                                                        Quantity
+                                                    </th>
+                                                    <th scope="col" className="px-6 py-3">
+                                                        Edit
+                                                    </th>
+                                                    <th scope="col" className="px-6 py-3">
+                                                        Delete
+                                                    </th>
 
-                                            {
-                                                rockets.map(rocket => <MyItem key={rocket._id} rocket={rocket} />)
-                                            }
-                                        </tbody>
-                                    </table>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+
+                                                {
+                                                    rockets.map(rocket => <MyItem key={rocket._id} rocket={rocket} />)
+                                                }
+                                            </tbody>
+                                        </table>
+                                    }
                                 </div>
 
                             </div>
