@@ -19,7 +19,7 @@ const Home = () => {
     }, [])
 
     return (
-        <div>
+        <div id='home'>
             <div className='fixed top-0 z-50 w-[100%]'><Header /></div>
             <div className=' absolute top-0 w-[100%] h-[100%]'>
                 <video

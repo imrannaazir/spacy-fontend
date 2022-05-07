@@ -1,17 +1,20 @@
-import { async } from '@firebase/util';
-import { faDeleteLeft, faEdit, faTrash, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
+import { faEdit, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import axios from 'axios';
 import React from 'react';
 import { Zoom } from 'react-reveal';
 import { Link } from 'react-router-dom';
 
-const AllRockets = ({ rocket }) => {
+const AllRockets = ({ rocket, rockets, setRockets }) => {
     const handleDelete = id => {
-        (async function () {
-            const { data } = await axios.delete(`http://localhost:5000/rockets/${id}`)
-            console.log(data);
-        })()
+        const proceed = window.confirm('Are You sure delete the rocket??')
+        if (proceed) {
+            (async function () {
+                const { data } = await axios.delete(`http://localhost:5000/rockets/${id}`)
+                const restRockets = await rockets.filter(rocket => rocket._id !== id)
+                setRockets(restRockets);
+            })()
+        }
     }
 
     return (

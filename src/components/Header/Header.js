@@ -41,10 +41,10 @@ const Header = () => {
                 <div className=' flex text-white justify-between w-[50%]'>
 
                     <div className=' flex gap-4'>
-                        <Link className=' transform duration-500 transition hover:scale-125 hover:border-b-2 h-[25px] my-auto' to='/'>Home</Link>
+                        <a className=' transform duration-500 transition hover:scale-125 hover:border-b-2 h-[25px] my-auto' href='/#home'>Home</a>
                         <a className=' transform duration-500 transition hover:scale-125 hover:border-b-2 h-[25px] my-auto' href='/#rockets'>Explore</a>
                         <Link className=' transform duration-500 transition hover:scale-125 hover:border-b-2 h-[25px] my-auto' to='/blogs'>Blog</Link>
-                        <Link className=' transform duration-500 transition hover:scale-125 hover:border-b-2 h-[25px] my-auto' to='/about'>About</Link>
+                        <a className=' transform duration-500 transition hover:scale-125 hover:border-b-2 h-[25px] my-auto' href='/#videos'>About</a>
                     </div>
 
                     <div>

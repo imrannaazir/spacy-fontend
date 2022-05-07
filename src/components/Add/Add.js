@@ -1,5 +1,5 @@
 import React from 'react';
-import { Slide } from 'react-reveal';
+import { Bounce, Slide, Zoom } from 'react-reveal';
 import DashNav from '../DashNav/DashNav';
 import logo from '../../assets/images/logo.png'
 import axios from 'axios';
@@ -38,12 +38,15 @@ const Add = () => {
     return (
         <div>
             <DashNav />
-            <Slide right cascade>
 
+            <Zoom right>
                 <div className='pl-[15%] py-4 flex items-end gap-6 bg-gradient-to-bl from-gray-500 rounded-l-3xl mb-10'>
                     <p className='text-5xl font-semibold text-transparent bg-clip-text bg-gradient-to-tr  from-white to-gray-500 '>ADD NEW ITEMS -</p>
 
                 </div>
+            </Zoom>
+
+            <Bounce cascade>
                 <div className="px-8 py-20 w-[20%] mx-auto">
                     <div className="grid gap-8 items-start justify-center w-[75%] mx-auto">
                         <div className="relative group">
@@ -67,7 +70,9 @@ const Add = () => {
                         </div>
                     </div>
                 </div>
-            </Slide></div>
+            </Bounce>
+
+        </div>
     );
 };
 

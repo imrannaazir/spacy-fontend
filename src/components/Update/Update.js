@@ -27,14 +27,17 @@ const Update = () => {
             return toast.error('Stock out!')
         }
         else {
-            (async function () {
-                console.log(updatedRocket);
-                const { data } = await axios.put(`http://localhost:5000/rockets/${_id}`, updatedRocket)
-                navigate('/');
-                console.log(data);
-            })();
-            setRocket(updatedRocket)
-            toast.success('Successfully delivered!')
+            const proceed = window.confirm(`Please confirm to deliver a ${name} rocket`)
+            if (proceed) {
+                (async function () {
+                    console.log(updatedRocket);
+                    const { data } = await axios.put(`http://localhost:5000/rockets/${_id}`, updatedRocket)
+                    navigate('/');
+                    console.log(data);
+                })();
+                setRocket(updatedRocket)
+                toast.success('Successfully delivered!')
+            }
         }
     }
 
@@ -46,15 +49,17 @@ const Update = () => {
         const updatedRocket = {
             quantity: newQuantity, ...rest
         };
-        (async function () {
-            console.log(updatedRocket);
-            const { data } = await axios.put(`http://localhost:5000/rockets/${_id}`, updatedRocket)
-            console.log(data);
-        })();
-        setRocket(updatedRocket);
-        navigate('/')
-        e.target.quantity.value = ''
-        toast.success(`Successfully added in stock${' ' + addQuantity + ' ' + '"' + name + '"'}`)
+        const proceed = window.confirm(`Are you sure you want to update quantity of ${name}?`)
+        if (proceed) {
+            (async function () {
+                console.log(updatedRocket);
+                const { data } = await axios.put(`http://localhost:5000/rockets/${_id}`, updatedRocket)
+            })();
+            setRocket(updatedRocket);
+            navigate('/')
+            e.target.quantity.value = ''
+            toast.success(`Successfully added in stock${' ' + addQuantity + ' ' + '"' + name + '"'}`)
+        }
     }
 
     return (
