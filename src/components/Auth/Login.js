@@ -26,14 +26,13 @@ const Login = () => {
         console.log(error);
     }
     if (user) {
-        const postToken = async () => {
+        (async function () {
             const email = user?.email;
             if (email) {
                 const { data } = await axios.post('http://localhost:5000/login', { email })
                 localStorage.setItem('accessToken', data.accessToken)
             }
-        }
-        postToken()
+        })();
 
         navigate(from, { replace: true });
     }

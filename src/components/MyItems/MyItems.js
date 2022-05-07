@@ -1,6 +1,8 @@
 import axios from 'axios';
+import { signOut } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import DashNav from '../DashNav/DashNav';
 import MyItem from '../MyItem/MyItem';
@@ -8,16 +10,27 @@ import MyItem from '../MyItem/MyItem';
 const MyItems = () => {
     const [user] = useAuthState(auth);
     const [rockets, setRockets] = useState([]);
+    const navigate = useNavigate();
     useEffect(() => {
+
         (async function () {
-            const { data } = await axios.get(`http://localhost:5000/myrockets?email=${user.email}`, {
-                headers: {
-                    authorization: `Bearer ${localStorage.getItem('accessToken')}`
+            try {
+                const { data } = await axios.get(`http://localhost:5000/myrockets?email=${user.email}`, {
+                    headers: {
+                        authorization: `Bearer ${localStorage.getItem('accessToken')}`
+                    }
+                })
+                setRockets(data);
+            }
+            catch (error) {
+                console.log(error.message);
+                if (error.response.status === 401 || error.response.status === 403) {
+                    navigate('/');
+                    signOut(auth);
                 }
-            })
-            setRockets(data);
+            }
         })();
-    }, [user.email])
+    }, [navigate, user])
     return (
         <div>
             <DashNav />

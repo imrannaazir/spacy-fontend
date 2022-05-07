@@ -43,7 +43,7 @@ const Header = () => {
                     <div className=' flex gap-4'>
                         <Link className=' transform duration-500 transition hover:scale-125 hover:border-b-2 h-[25px] my-auto' to='/'>Home</Link>
                         <a className=' transform duration-500 transition hover:scale-125 hover:border-b-2 h-[25px] my-auto' href='/#rockets'>Explore</a>
-                        <Link className=' transform duration-500 transition hover:scale-125 hover:border-b-2 h-[25px] my-auto' to='/blog'>Blog</Link>
+                        <Link className=' transform duration-500 transition hover:scale-125 hover:border-b-2 h-[25px] my-auto' to='/blogs'>Blog</Link>
                         <Link className=' transform duration-500 transition hover:scale-125 hover:border-b-2 h-[25px] my-auto' to='/about'>About</Link>
                     </div>
 

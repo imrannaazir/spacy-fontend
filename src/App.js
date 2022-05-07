@@ -4,7 +4,6 @@ import About from './components/About/About';
 import Add from './components/Add/Add';
 import Login from './components/Auth/Login';
 import RequireAuth from './components/Auth/RequireAuth';
-import Blog from './components/Blog/Blog';
 import Home from './components/Home/Home';
 import ManageInventories from './components/ManageInventories/ManageInventories';
 import Shop from './components/Shop/Shop';
@@ -13,6 +12,7 @@ import Update from './components/Update/Update';
 import { Toaster } from 'react-hot-toast';
 import MyItems from './components/MyItems/MyItems';
 import NotFound from './components/NotFound/NotFound';
+import Blogs from './components/Blog/Blogs';
 
 function App() {
   return (
@@ -30,7 +30,7 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/home' element={<Home />} />
           <Route path='/shop' element={<Shop />} />
-          <Route path='/blog' element={<Blog />} />
+          <Route path='/blogs' element={<Blogs />} />
           <Route path='/About' element={<About />} />
           <Route path='/admin' element={<RequireAuth><ManageInventories /></RequireAuth>} />
           <Route path='/update/:id' element={<RequireAuth><Update /></RequireAuth>} />
