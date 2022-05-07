@@ -5,12 +5,16 @@ import React from 'react';
 import { Zoom } from 'react-reveal';
 import { Link } from 'react-router-dom';
 
-const MyItem = ({ rocket }) => {
+const MyItem = ({ rocket, rockets, setRockets }) => {
     const handleDelete = id => {
-        (async function () {
-            const { data } = await axios.delete(`http://localhost:5000/rockets/${id}`)
-            console.log(data);
-        })()
+        const proceed = window.confirm('Are You sure delete the rocket??')
+        if (proceed) {
+            (async function () {
+                const { data } = await axios.delete(`http://localhost:5000/rockets/${id}`)
+                const restRockets = await rockets.filter(rocket => rocket._id !== id)
+                setRockets(restRockets);
+            })()
+        }
     }
 
     return (

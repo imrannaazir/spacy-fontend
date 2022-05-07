@@ -32,6 +32,8 @@ const MyItems = () => {
             }
         })();
     }, [navigate, user])
+
+
     return (
         <div>
             <DashNav />
@@ -56,7 +58,7 @@ const MyItems = () => {
 
                                     {rockets.length === 0 ?
                                         <div className=' p-4'>
-                                            <span className='text-gray-400'>Sorry!! You haven't added any rockets yet. </span><Link className='underline' to='/add'>Add New</Link></div> :
+                                            <span className='text-gray-400'>Sorry!! You haven't added any rockets yet. </span><Link className='underline hover:text-pink-500  duration-500' to='/add'>Add New</Link></div> :
                                         <table className="w-[1200px] text-sm text-left text-gray-500 dark:text-gray-400">
                                             <thead className="text-xs text-white uppercase bg-black">
                                                 <tr>
@@ -84,7 +86,7 @@ const MyItems = () => {
                                             <tbody>
 
                                                 {
-                                                    rockets.map(rocket => <MyItem key={rocket._id} rocket={rocket} />)
+                                                    rockets.map(rocket => <MyItem key={rocket._id} rocket={rocket} rockets={rockets} setRockets={setRockets} />)
                                                 }
                                             </tbody>
                                         </table>

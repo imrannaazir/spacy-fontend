@@ -27,13 +27,16 @@ const Add = () => {
             quantity: e.target.quantity.value,
             email: user.email
         };
-        (async function () {
-            const { data } = await axios.post('http://localhost:5000/rockets', newRocket)
+        const proceed = window.confirm(`Are You Sure You want to add ${newRocket.name}?`);
+        if (proceed) {
+            (async function () {
+                const { data } = await axios.post('http://localhost:5000/rockets', newRocket)
 
-        })()
-        e.target.reset();
-        navigate('/');
-        toast.success('Successfully uploaded!')
+            })()
+            e.target.reset();
+            navigate('/my-items');
+            toast.success('Successfully uploaded!')
+        }
     }
     return (
         <div>

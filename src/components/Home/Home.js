@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Header from '../Header/Header';
 import rocket from '../../assets/videos/rocket .mp4'
 import Footer from '../Footer/Footer';
-import { Bounce, Flip, Slide, Zoom } from 'react-reveal';
+import { Bounce, Slide, Zoom } from 'react-reveal';
 import '../../components/Header/Header.css'
 import axios from 'axios';
 import Rockets from '../Rockets/Rockets';
