@@ -59,9 +59,10 @@ const Header = () => {
 
                                 onClick={() => setOpenUser(!openUser)}
                                 className='transform  duration-500 hover:scale-75 flex items-center'>
+
                                 <img
                                     className=' w-14 rounded-full'
-                                    src={user?.photoURL} alt="" />
+                                    src={user?.photoURL ? user?.photoURL : 'https://png.pngitem.com/pimgs/s/130-1300400_user-hd-png-download.png'} alt="" />
                                 <FontAwesomeIcon className='text-xl' icon={faCaretDown} />
                             </div>
                         }
@@ -75,7 +76,7 @@ const Header = () => {
             {openUser && <Slide right cascade>
                 <nav className={`${user?.email ? 'absolute' : 'hidden'} right-0 top-[70px] ${nav ? 'bg-transparent' : 'bg-black'} border-2 rounded-md text-white p-4`}>
                     <div className='w-full text-center'>
-                        <img className='w-[100px] mx-auto rounded-full' src={user?.photoURL} alt="" />
+                        <img className='w-[100px] mx-auto rounded-full' src={user?.photoURL ? user?.photoURL : 'https://png.pngitem.com/pimgs/s/130-1300400_user-hd-png-download.png'} alt="" />
                         <p className='text-lg font-semibold'>{user?.displayName}</p>
                         <p className=' text-xs mb-3'>{user?.email}</p>
                     </div>
