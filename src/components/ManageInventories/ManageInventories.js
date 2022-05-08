@@ -12,14 +12,14 @@ const ManageInventories = () => {
 
     useEffect(() => {
         (async function () {
-            const { data } = await axios.get(`http://localhost:5000/rockets?page=${page}&limit=${limit}`)
+            const { data } = await axios.get(`https://nameless-beach-41067.herokuapp.com/rockets?page=${page}&limit=${limit}`)
             setRockets(data);
         })();
     }, [limit, page]);
 
     useEffect(() => {
         (async function () {
-            const { data } = await axios.get('http://localhost:5000/rocketsCount')
+            const { data } = await axios.get('https://nameless-beach-41067.herokuapp.com/rocketsCount')
             const count = data.count;
             const pages = Math.ceil(count / limit);
             setPageCount(pages);

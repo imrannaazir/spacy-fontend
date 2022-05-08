@@ -11,7 +11,7 @@ const Home = () => {
     const [rockets, setRockets] = useState([])
     useEffect(() => {
         (async function () {
-            const { data } = await axios.get('http://localhost:5000/rockets')
+            const { data } = await axios.get('https://nameless-beach-41067.herokuapp.com/rockets')
             const rockets = data.slice(0, 6)
             setRockets(rockets);
         })()

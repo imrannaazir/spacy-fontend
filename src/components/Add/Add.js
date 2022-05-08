@@ -34,7 +34,7 @@ const Add = () => {
         const proceed = window.confirm(`Are You Sure You want to add ${newRocket.name}?`);
         if (proceed) {
             (async function () {
-                const { data } = await axios.post('http://localhost:5000/rockets', newRocket)
+                const { data } = await axios.post('https://nameless-beach-41067.herokuapp.com/rockets', newRocket)
 
             })();
             e.target.reset();

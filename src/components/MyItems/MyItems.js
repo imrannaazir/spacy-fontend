@@ -16,7 +16,7 @@ const MyItems = () => {
 
         (async function () {
             try {
-                const { data } = await axios.get(`http://localhost:5000/myrockets?email=${user.email}`, {
+                const { data } = await axios.get(`https://nameless-beach-41067.herokuapp.com/myrockets?email=${user.email}`, {
                     headers: {
                         authorization: `Bearer ${localStorage.getItem('accessToken')}`
                     }

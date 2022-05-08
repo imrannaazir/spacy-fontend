@@ -14,7 +14,7 @@ const AllRockets = ({ rocket, rockets, setRockets }) => {
         const proceed = window.confirm('Are You sure delete the rocket??')
         if (proceed) {
             (async function () {
-                const { data } = await axios.delete(`http://localhost:5000/rockets/${id}`)
+                const { data } = await axios.delete(`https://nameless-beach-41067.herokuapp.com/rockets/${id}`)
                 const restRockets = await rockets.filter(rocket => rocket._id !== id)
                 setRockets(restRockets);
             })();
