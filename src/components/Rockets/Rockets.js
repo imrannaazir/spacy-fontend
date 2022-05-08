@@ -16,7 +16,7 @@ const Rockets = ({ rocket: { name, img, description, quantity, supplier, _id } }
         <Zoom>
             <div
 
-                className=' w-[80%] mx-auto border-2 border-white rounded-lg relative'>
+                className=' lg:w-[80%] mx-auto border-2 border-white rounded-lg relative'>
                 <img
 
                     onMouseEnter={() => setDetails(true)}
@@ -25,7 +25,7 @@ const Rockets = ({ rocket: { name, img, description, quantity, supplier, _id } }
                 <Bounce clear cascade>
                     <div
                         onMouseLeave={() => setDetails(false)}
-                        className={`absolute top-0 bg-black bg-opacity-70 inset-0 ${details ? 'flex' : 'hidden'} flex-col justify-center items-center p-20 text-white gap-6`}>
+                        className={`absolute top-0 bg-black bg-opacity-70 inset-0 ${details ? 'flex' : 'hidden'} flex-col justify-center items-center p-4 lg:p-20 text-white gap-6`}>
                         <p className=' text-4xl font-bold text-transparent  bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500'>{name}</p>
 
                         <p className=' border-l-2 pl-2 border-purple-400'>{description}</p>

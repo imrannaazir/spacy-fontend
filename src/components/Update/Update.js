@@ -67,22 +67,22 @@ const Update = () => {
             <DashNav />
             <Slide right cascade>
                 <div className=' '>
-                    <div className='pl-[15%] py-4 flex items-end gap-6 bg-gradient-to-bl from-gray-500 rounded-l-3xl'>
-                        <p className='text-6xl text-white'><Slide left cascade>{name}</Slide></p>
+                    <div className='pl-[16%] py-4 flex items-end gap-6 bg-gradient-to-bl from-gray-500 rounded-l-3xl'>
+                        <p className='text-4xl lg:text-6xl text-white'><Slide left cascade>{name}</Slide></p>
                         <p className='text-white '><Slide left cascade>{'(' + supplier + ')'}</Slide></p>
                     </div>
                     {/* image */}
-                    <div className=' mx-[15%] my-8 grid grid-cols-2'>
+                    <div className=' mx-[15%] my-8 grid lg:grid-cols-2'>
                         <div>
                             <img src={img} alt="" />
                         </div>
 
                         {/* details */}
                         <Zoom cascade>
-                            <div className=' bg-gradient-to-t from-white to-gray-500 flex flex-col justify-center items-start gap-8 px-[5%]'>
+                            <div className=' bg-gradient-to-t from-white to-gray-500 flex flex-col justify-center items-start gap-8 px-[5%] pb-4'>
                                 {/* Quantity */}
                                 <div className='flex items-end'>
-                                    <p className='text-9xl text-transparent bg-clip-text bg-gradient-to-t from-black to-gray-500'>{quantity}</p>
+                                    <p className='text-6xl lg:text-9xl text-transparent bg-clip-text bg-gradient-to-t from-black to-gray-500'>{quantity}</p>
                                     <p className='text-4xl pl-2 pb-4'>Available</p>
                                 </div>
                                 {/* description */}

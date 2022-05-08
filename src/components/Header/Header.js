@@ -65,7 +65,7 @@ const Header = () => {
                                 <div
 
                                     onClick={() => setOpenUser(!openUser)}
-                                    className='transform  duration-500 hover:scale-75 flex items-center'>
+                                    className='transform  duration-500 hover:scale-75 flex items-center justify-center'>
 
                                     <img
                                         className=' w-14 rounded-full'
@@ -91,7 +91,7 @@ const Header = () => {
                         {!user ?
                             <Link to='/login'><button
 
-                                className='border-2 px-4 py-1 hover:scale-110 hover:bg-black duration-500 hover:font-bold'>Login
+                                className='border-2 px-4 py-1 mt-3 hover:scale-110 hover:bg-black duration-500 hover:font-bold'>Login
                             </button>
                             </Link>
                             :
