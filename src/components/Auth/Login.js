@@ -67,11 +67,12 @@ const Login = () => {
 
     const handleLogin = e => {
         e.preventDefault();
+        console.log(typeof (signInfo.email))
         if (signInfo.email === '' || signInfo.password === '') { return }
         else {
             console.log(signInfo.email, signInfo.password);
 
-            signInWithEmailAndPassword(auth, signInfo.email, signInfo.password);
+            signInWithEmailAndPassword(signInfo.email, signInfo.password);
             e.target.reset()
             if (emailError) {
                 toast.error(emailError.message)

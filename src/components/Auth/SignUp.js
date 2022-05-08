@@ -11,7 +11,7 @@ import axios from 'axios';
 import toast from 'react-hot-toast';
 
 const SignUp = () => {
-    const [createUserWithEmailAndPassword, emailUser, emailLoading, emailError,] = useCreateUserWithEmailAndPassword(auth);
+    const [createUserWithEmailAndPassword, emailUser, emailLoading, emailError] = useCreateUserWithEmailAndPassword(auth);
     const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
     const [signInWithGithub, githubUser, githubLoading, githubError] = useSignInWithGithub(auth);
     const [user, loading, error] = useAuthState(auth);
@@ -77,7 +77,7 @@ const SignUp = () => {
         e.preventDefault();
         if (signInfo.confirmPass === '' || signInfo.password === '') { return }
         else {
-            createUserWithEmailAndPassword(auth, signInfo.email, signInfo.password)
+            createUserWithEmailAndPassword(signInfo.email, signInfo.password)
 
         }
     };
