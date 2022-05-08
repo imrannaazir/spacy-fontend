@@ -11,13 +11,15 @@ import axios from 'axios';
 import toast from 'react-hot-toast';
 
 const SignUp = () => {
-    const [createUserWithEmailAndPassword, emailUser, emailLoading, emailError] = useCreateUserWithEmailAndPassword(auth);
+    const [createUserWithEmailAndPassword, emailUser, emailLoading, emailError] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
     const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
     const [signInWithGithub, githubUser, githubLoading, githubError] = useSignInWithGithub(auth);
     const [user, loading, error] = useAuthState(auth);
     const location = useLocation();
     const navigate = useNavigate();
-    let from = location.state?.from?.pathname || "/"
+    let from = location.state?.from?.pathname || "/";
+
+
     const [signInfo, setSignInfo] = useState({
         email: '',
         password: '',
@@ -43,8 +45,8 @@ const SignUp = () => {
         else {
             setSignInfo({ ...signInfo, email: '' });
             setErrors({ ...errors, emailError: 'Please provide a valid email!' })
-        }
-    }
+        };
+    };
 
     //handle onChange password
     const changePassword = e => {
@@ -57,8 +59,8 @@ const SignUp = () => {
         else {
             setSignInfo({ ...signInfo, password: '' });
             setErrors({ ...errors, passwordError: 'Password must have minimum 6 characters!' })
-        }
-    }
+        };
+    };
 
 
     // handle onChange for confirm pass
@@ -70,8 +72,8 @@ const SignUp = () => {
         else {
             setSignInfo({ ...signInfo, confirmPass: '' });
             setErrors({ ...errors, confirmPassError: `Password doesn't match!` })
-        }
-    }
+        };
+    };
 
     const handleSignUpEmail = e => {
         e.preventDefault();
@@ -79,7 +81,7 @@ const SignUp = () => {
         else {
             createUserWithEmailAndPassword(signInfo.email, signInfo.password)
 
-        }
+        };
     };
 
     // loading
@@ -88,10 +90,10 @@ const SignUp = () => {
     //error handle
     if (googleError) {
         toast.error(googleError.message);
-    }
+    };
     if (githubError) {
         toast.error(googleError.message);
-    }
+    };
 
     if (user) {
         (async function () {
@@ -99,18 +101,18 @@ const SignUp = () => {
             if (email) {
                 const { data } = await axios.post('http://localhost:5000/login', { email })
                 localStorage.setItem('accessToken', data.accessToken)
-            }
+            };
         })();
 
         navigate(from, { replace: true });
-    }
+    };
 
     return (
         <div className=' h-screen'>
             <Header />
+
             <div
                 className='w-[375px]  mx-auto border-2  mt-20 py-6 text-center rounded-lg shadow-lg'>
-
                 <p
                     className=' text-2xl text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-600 font-semibold mb-4'>Sign up to SPACEY
                 </p>
@@ -136,7 +138,8 @@ const SignUp = () => {
                     {/* password */}
                     <input
                         onChange={changePassword}
-                        className='w-[330px] px-3 py-1 mx-auto border-2  mt-5  rounded-full bg-transparent' type="password"
+                        className='w-[330px] px-3 py-1 mx-auto border-2  mt-5  rounded-full bg-transparent'
+                        type="password"
                         placeholder='Create password '
                         autoComplete='off'
                         name="password"
@@ -148,18 +151,14 @@ const SignUp = () => {
                     {/* confirm password */}
                     <input
                         onChange={changeConfirmPass}
-                        className='w-[330px] px-3 py-1 mx-auto border-2  mt-5  rounded-full bg-transparent' type="password"
+                        className='w-[330px] px-3 py-1 mx-auto border-2  my-5  rounded-full bg-transparent'
+                        type="password"
                         placeholder='Confirm password '
                         autoComplete='off'
                         name="confirmPass"
                         required
                     />
                     <p className=' pl-6 text-red-500 text-left'>{errors.confirmPassError}</p>
-
-
-                    {/* forget password/ reset password */}
-                    <button className='text-right w-[330px] mx-auto text-pink-400 '>forgot password?</button>
-
 
                     {/* Sign up button */}
                     <button className='w-[330px] px-3 py-2 mx-auto  rounded-full  bg-gradient-to-r from-pink-500 hover:from-purple-600 to-purple-600 hover:to-pink-600 duration-500 hover:scale-105' type="submit">Sign up</button>

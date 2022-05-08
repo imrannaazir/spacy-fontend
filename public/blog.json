@@ -4,7 +4,7 @@
     "title": "Difference between javascript and node js.",
     "img": "https://i.ibb.co/VtHYrXs/1-js-vs-node.jpg",
     "author": "Imran Nazir",
-    "blog": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore, blanditiis id quisquam unde dicta magnam veniam accusamus in fuga ipsa quaerat autem iure quos eum cupiditate esse minima deleniti eveniet aperiam dolore culpa ullam. Unde itaque fugit nemo nostrum non omnis ducimus illum tempore obcaecati? Delectus unde sint laudantium culpa eaque enim! Eaque hic qui consequuntur accusamus illo minus ea vel quod, magnam facilis? Explicabo corporis, aperiam ipsam dignissimos illo quia quas libero, quae doloribus consectetur enim id nesciunt. Tempora corrupti facilis voluptate reprehenderit laborum tempore excepturi debitis, natus deleniti quod? Obcaecati est ipsa sit porro deleniti! Quos, adipisci hic."
+    "blog": "Many of us do not know properly what are the actual differences between  Java Scrictp and Node JS. Today I'm gonna discuss some of the main differences between Javascript and node js. Java Script is actually single treated programming language. On the other hand Node, js is a runtime of JavaScript. Java Script is running in any web browser with a proper browser engine like the V8 engine for google chrome, and the JavaScript core engine for Safari. But Node JS is using the v8 engine directly. It actually helps us to use Javascript from outside of the browser."
   },
   {
     "id": 2,

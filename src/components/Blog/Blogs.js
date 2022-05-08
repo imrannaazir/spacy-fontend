@@ -3,7 +3,6 @@ import React, { useEffect, useState } from 'react';
 import { Slide } from 'react-reveal';
 import { Link } from 'react-router-dom';
 import logo from '../../assets/images/logo.png'
-import Footer from '../Footer/Footer';
 import Blog from './Blog';
 const Blogs = () => {
     const [blogs, setBlogs] = useState([]);
@@ -11,13 +10,15 @@ const Blogs = () => {
         (async function () {
             const { data } = await axios('blog.json')
             setBlogs(data);
-        })()
-    }, [])
+        })();
+    }, []);
     return (
         <div>
             <Slide left>
                 <div className='w-full bg-gradient-to-r from-purple-900 to-transparent px-[5%] pb-4 border-b-[1px] border-purple-900 '>
-                    <div className='flex justify-center '><img className='w-[200px]' src={logo} alt="" /></div>
+                    <div className='flex justify-center '>
+                        <img className='w-[200px]' src={logo} alt="" />
+                    </div>
                     <div className='flex justify-between items-center'>
                         <div>
                             <p className='text-5xl font-bold text-pink-500'>Blog</p>
@@ -72,7 +73,7 @@ const Blogs = () => {
 
                             </div>
                         </div>
-                        <div><Link className=' text-white px-4 py-3 bg-pink-500 rounded-full font-semibold transform hover:bg-purple-500 duration-500' to='/'>« Back To Home</Link></div>
+                        <div><Link className=' text-white px-4 py-3 bg-pink-500 rounded-full font-semibold transform hover:bg-purple-500 duration-500' to='/'>Home</Link></div>
                     </div>
 
 

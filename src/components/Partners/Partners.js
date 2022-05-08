@@ -10,8 +10,10 @@ const Partners = () => {
         (async function () {
             const { data } = await axios.get('logo.json');
             setLogos(data);
-        })()
-    }, [])
+        })();
+    }, []);
+
+
     const settings = {
         dots: true,
         infinite: true,
@@ -29,7 +31,12 @@ const Partners = () => {
             <div>
                 <Slider {...settings} className='flex'>
                     {
-                        logos.map(logo => <div key={logo} className=''><img src={logo} alt="" /></div>)
+                        logos.map(logo =>
+                            <div
+                                key={logo}
+                                className=''>
+                                <img src={logo} alt="" />
+                            </div>)
                     }
                 </Slider>
             </div>

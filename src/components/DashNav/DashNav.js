@@ -12,8 +12,6 @@ const DashNav = () => {
     return (
         <Slide left cascade>
             <div>
-
-
                 <div className={`h-screen fixed w-[75px] bg-black z-10`}>
                     {!open && <Slide left>
 
@@ -30,11 +28,13 @@ const DashNav = () => {
                                 <Link to='/my-items'><FontAwesomeIcon icon={faUserCheck} /></Link>
                                 <Link to='/add'><FontAwesomeIcon icon={faAdd} /></Link>
                             </div>
+
                             <button
                                 onClick={() => signOut(auth)}
-                                className='absolute bottom-6 text-white'><FontAwesomeIcon icon={faRightFromBracket} /></button>
+                                className='absolute bottom-6 text-white'>
+                                <FontAwesomeIcon icon={faRightFromBracket} />
+                            </button>
                         </div>
-
                     </div>
 
 
@@ -55,7 +55,11 @@ const DashNav = () => {
                         className=' absolute bottom-6 text-lg pl-4'>Logout</button>
 
                 </div>
-                <img className={`h-[50px] z-50 ${open ? 'fixed' : 'hidden'} top-12 left-4`} src={logo} alt="" />
+                <img
+                    className={`h-[50px] z-50 ${open ? 'fixed' : 'hidden'} top-12 left-4`}
+                    src={logo}
+                    alt=""
+                />
 
             </div>
         </Slide>
