@@ -7,6 +7,7 @@ import axios from 'axios';
 import Rockets from '../Rockets/Rockets';
 import Partners from '../Partners/Partners';
 import VideoSection from '../VideoSection/VideoSection';
+import Loading from '../Loading/Loading';
 const Home = () => {
     const [rockets, setRockets] = useState([])
     useEffect(() => {
@@ -16,7 +17,7 @@ const Home = () => {
             setRockets(rockets);
         })()
     }, [])
-
+    if (rockets.length === 0) return <Loading />
     return (
         <div id='home'>
             <div className='fixed top-0 z-50 w-[100%]'>
