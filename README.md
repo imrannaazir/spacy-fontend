@@ -5,7 +5,7 @@ Where we stock the rickets from various companies. There I can update rocket qua
 
 ## - Live Link [SPACEY](https://space-y-one.web.app/)
 
-## - Live Link [Server-side code link](https://github.com/ProgrammingHeroWC4/warehouse-management-server-side-imrannaazir)
+## - Live Link [Server-side code link](https://github.com/imrannaazir/spacy)
 
 # What I do in this project
 
