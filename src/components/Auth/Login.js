@@ -1,9 +1,9 @@
-import Header from '../Header/Header';
+import Header from '../shared/Header';
 import google from '../../assets/images/google.png'
 import { useAuthState, useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGithub, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init'
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import Loading from '../Loading/Loading';
+import Loading from '../shared/Loading';
 import axios from 'axios';
 import github from '../../assets/images/github.png';
 import { useState } from 'react';

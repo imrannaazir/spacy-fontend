@@ -5,7 +5,7 @@ import logo from '../../assets/images/logo.png'
 import axios from 'axios';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
-import Loading from '../Loading/Loading';
+import Loading from '../shared/Loading';
 import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 

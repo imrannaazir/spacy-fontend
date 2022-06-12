@@ -5,7 +5,7 @@ import logo from '../../assets/images/logo.png'
 const Footer = () => {
     return (
         <Slide right>
-            <div className=' w-[100%] px-[10%] border-t-2 border-gray-700 bg-gradient-to-r from-transparent to-purple-600 lg:to-purple-400
+            <div className=' w-[100%] px-[10%] border-t-2 border-gray-700 bg-[#0F0E0E]
          grid lg:grid-cols-3 gap-4 my-20 py-6 '>
 
                 <Zoom cascade>

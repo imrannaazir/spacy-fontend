@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import Header from '../Header/Header';
+import Header from '../shared/Header';
 import google from '../../assets/images/google.png';
 import github from '../../assets/images/github.png'
 
 import auth from '../../firebase.init';
 import { useAuthState, useCreateUserWithEmailAndPassword, useSignInWithGithub, useSignInWithGoogle } from 'react-firebase-hooks/auth';
-import Loading from '../Loading/Loading';
+import Loading from '../shared/Loading';
 import axios from 'axios';
 import toast from 'react-hot-toast';
 
