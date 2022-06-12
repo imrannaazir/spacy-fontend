@@ -5,8 +5,8 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { Slide } from 'react-reveal';
 import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
-import DashNav from '../DashNav/DashNav';
-import MyItem from '../MyItem/MyItem';
+import DashNav from './DashNav';
+import MyItem from './MyItem';
 
 const MyItems = () => {
     const [user] = useAuthState(auth);

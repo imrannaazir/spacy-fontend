@@ -1,9 +1,10 @@
 import React from 'react';
-
+import image from "../../assets/images/join-us.jpg"
 const VideoSection = () => {
     return (
-        <div className='bg-[#0F0E0E]' id='videos bg'>
-            <p className=' text-4xl text-transparent bg-clip-text bg-gradient-to-t from-white to-gray-700 text-center my-20 font-semibold'>JOURNEY THAT MAKE HISTORY.</p>
+        <div style={{ backgroundImage: `url(${image})` }}
+            class=" bg-cover h-screen gap-10 bg-fixed flex flex-col justify-center items-center">
+            <p className=' text-4xl text-white text-center my-20 font-semibold'>Journey That Make History</p>
             <div className='w-[80%] mx-auto grid lg:grid-cols-2 gap-6'>
                 <iframe className='md:w-[392px] lg:w-[560px] md:h-[220px] lg:h-[315px] hover:scale-125 duration-500' src="https://www.youtube.com/embed/TeVbYCIFVa8" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Bounce, Slide, Zoom } from 'react-reveal';
-import DashNav from '../DashNav/DashNav';
+import DashNav from './DashNav';
 import logo from '../../assets/images/logo.png'
 import axios from 'axios';
 import { useAuthState } from 'react-firebase-hooks/auth';

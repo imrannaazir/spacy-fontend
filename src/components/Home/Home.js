@@ -3,9 +3,9 @@ import Footer from '../shared/Footer';
 import JoinNow from './JoinNow';
 import ExploreOurRockets from './ExploreOurRockets';
 import Banner from './Banner';
-import { Slide } from 'react-reveal';
 import VideoSection from './VideoSection';
 import Partners from './Partners';
+import Contacts from './Contacts';
 const Home = () => {
 
     return (
@@ -15,20 +15,11 @@ const Home = () => {
             </div>
             <div className=' absolute top-0 w-[100%] h-[100%]'>
                 <Banner />
-
                 <ExploreOurRockets />
-
-                {/* join section */}
                 <JoinNow />
-
-                <Slide right>
-                    <VideoSection />
-                </Slide>
-
-                <Slide left>
-                    <Partners />
-                </Slide>
-
+                <VideoSection />
+                <Partners />
+                <Contacts />
                 <Footer />
             </div>
         </div>

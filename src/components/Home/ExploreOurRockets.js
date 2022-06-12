@@ -19,8 +19,7 @@ const ExploreOurRockets = () => {
             <Bounce >
                 <p
                     id='rockets'
-                    className='text-center py-10 text-4xl font-semibold text-transparent bg-clip-text bg-gradient-to-t from-white to-gray-900'>
-                    EXPLORE OUR ROCKETS UNIVERSE
+                    className='text-center py-10 text-4xl font-semibold text-white'>Explore Our Rockets Universe
                 </p>
             </Bounce >
 

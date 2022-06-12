@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Slide } from 'react-reveal';
 import AllRockets from '../AllRockets/AllRockets';
-import DashNav from '../DashNav/DashNav';
+import DashNav from './DashNav';
 
 const ManageInventories = () => {
     const [rockets, setRockets] = useState([]);

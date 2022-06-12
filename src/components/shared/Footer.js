@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom';
 import logo from '../../assets/images/logo.png'
 const Footer = () => {
     return (
-        <Slide right>
+        <Slide button>
             <div className=' w-[100%] px-[10%] border-t-2 border-gray-700 bg-[#0F0E0E]
-         grid lg:grid-cols-3 gap-4 my-20 py-6 '>
+         grid lg:grid-cols-3 gap-4 mb-20 py-6 '>
 
                 <Zoom cascade>
                     <div className='border-b-[1px] lg:border-b-0 lg:border-r-2 border-gray-600'>

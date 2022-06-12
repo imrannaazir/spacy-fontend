@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
 import { Slide, Zoom } from 'react-reveal';
 import { useNavigate, useParams } from 'react-router-dom';
-import DashNav from '../DashNav/DashNav';
+import DashNav from './DashNav';
 
 const Update = () => {
     const navigate = useNavigate();
@@ -14,7 +14,7 @@ const Update = () => {
             const { data } = await axios.get(`https://nameless-beach-41067.herokuapp.com/rockets/${id}`)
             setRocket(data)
         })()
-    }, [])
+    }, [id])
 
     const { name, img, description, quantity, supplier, _id } = rocket;
 
