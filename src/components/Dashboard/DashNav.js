@@ -12,7 +12,7 @@ const DashNav = () => {
     return (
         <Slide left cascade>
             <div>
-                <div className={`h-screen fixed w-[30px] bg-black z-10`}>
+                <div className={`h-screen fixed w-[30px] md:w-[75px] bg-black z-10`}>
                     {!open && <Slide left>
 
                         <FontAwesomeIcon

@@ -42,7 +42,7 @@ const ManageInventories = () => {
 
 
             <Slide left>
-                <div className="pl-[40px] lg:px-8 py-6 w-[100%]">
+                <div className="pl-[40px] md:pl-[75%] lg:px-8 py-6 ">
                     <div className="grid lg:gap-8 items-start justify-end pr-4 w-[100%]">
                         <div className="relative group">
                             <div
@@ -55,7 +55,7 @@ const ManageInventories = () => {
 
                                 <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
                                     <table
-                                        className=" lg:w-[1200px] text-sm text-left text-gray-500 dark:text-gray-400">
+                                        className=" md:w-[650px] lg:w-[1200px] mx-auto text-sm text-left text-gray-500 dark:text-gray-400">
                                         <thead className="text-xs text-white uppercase bg-black ">
                                             <tr>
                                                 <th
@@ -108,8 +108,6 @@ const ManageInventories = () => {
                                             }
                                         </tbody>
                                     </table>
-
-
 
                                     <div className='pagination my-3 text-right'>
                                         {

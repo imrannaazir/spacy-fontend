@@ -49,7 +49,7 @@ const Add = () => {
 
             {/* Header title */}
             <Zoom right>
-                <div className='pl-[30px] py-4 flex items-end gap-6 bg-gray-500 rounded-l-3xl mb-10'>
+                <div className='pl-[30px] md:pl-[75px] py-4 flex items-end gap-6 bg-gray-500 rounded-l-3xl mb-10'>
                     <p className='text-3xl font-semibold text-white pl-4 '>Add Items -</p>
 
                 </div>
