@@ -12,16 +12,16 @@ const DashNav = () => {
     return (
         <Slide left cascade>
             <div>
-                <div className={`h-screen fixed w-[75px] bg-black z-10`}>
+                <div className={`h-screen fixed w-[30px] bg-black z-10`}>
                     {!open && <Slide left>
 
                         <FontAwesomeIcon
                             onClick={() => setOpen(!open)}
-                            className='text-white absolute top-4 left-6 text-lg' icon={faBars} /></Slide>}
+                            className='text-white absolute top-4 left-2 md:left-6 text-lg' icon={faBars} /></Slide>}
 
 
                     <div>
-                        <div className={`text-white mt-[120px] text-lg pl-6 flex flex-col`}>
+                        <div className={`text-white mt-[120px] text-lg pl-1 md:pl-6 flex flex-col`}>
                             <div className='flex flex-col gap-6'>
                                 <Link to='/'><FontAwesomeIcon icon={faHome} /></Link>
                                 <Link to='/admin'><FontAwesomeIcon icon={faListCheck} /></Link>
@@ -40,7 +40,8 @@ const DashNav = () => {
 
 
                 </div>
-                <div className={`h-screen ${open ? 'fixed' : 'hidden'} w-[150px] bg-gradient-to-r from-black to-gray-800 left-[75px] text-white z-50`}>
+                <div className={`h-screen ${open ? 'fixed' : 'hidden'} w-[150px] bg-gradient-to-r from-black to-gray-800
+                left-[30px] md:left-[75px] text-white z-50`}>
                     {open && <FontAwesomeIcon
                         onClick={() => setOpen(!open)}
                         className='text-white absolute top-4 right-6 text-xs' icon={faX} />}

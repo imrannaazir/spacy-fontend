@@ -31,10 +31,10 @@ const ManageInventories = () => {
             <DashNav />
             <Slide right>
                 <div
-                    className='pl-[16%] py-4 flex items-end gap-6 bg-gradient-to-bl from-gray-500 rounded-l-3xl mb-4'>
+                    className='pl-[30px] md:pl-[75px] py-4 flex items-end gap-6 bg-gray-600 rounded-l-3xl mb-4'>
                     <p
-                        className='text-3xl lg:text-5xl font-semibold text-transparent bg-clip-text bg-gradient-to-tr  from-white to-gray-500 '>
-                        MANAGE INVENTORIES -
+                        className='text-3xl lg:text-5xl font-semibold text-white pl-4'>
+                        Manage Inventories -
                     </p>
                 </div>
             </Slide>
@@ -42,7 +42,7 @@ const ManageInventories = () => {
 
 
             <Slide left>
-                <div className="lg:px-8 py-6 w-[100%]">
+                <div className="pl-[40px] lg:px-8 py-6 w-[100%]">
                     <div className="grid lg:gap-8 items-start justify-end pr-4 w-[100%]">
                         <div className="relative group">
                             <div
@@ -82,7 +82,7 @@ const ManageInventories = () => {
                                                 <th
                                                     scope="col"
                                                     className="lg:px-6 py-3">
-                                                    Quantity
+                                                    Quan
                                                 </th>
 
 
@@ -96,7 +96,7 @@ const ManageInventories = () => {
                                                 <th
                                                     scope="col"
                                                     className="lg:px-6 py-3">
-                                                    Delete
+                                                    Del
                                                 </th>
 
                                             </tr>

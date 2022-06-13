@@ -40,16 +40,16 @@ const MyItems = () => {
 
             <Slide right>
                 <div
-                    className='pl-[16%] py-4 flex items-end gap-6 bg-gradient-to-bl from-gray-500 rounded-l-3xl mb-10'>
+                    className='pl-[40px] md:ml-[75px] py-4 flex items-end gap-6 bg-gradient-to-bl from-gray-500 rounded-l-3xl mb-10'>
                     <p
-                        className='text-3xl lg:text-5xl  text-transparent bg-clip-text bg-gradient-to-tr  from-white to-gray-500 '>
-                        MY ITEMS -
+                        className='text-3xl lg:text-5xl  text-white font-semibold ml-4'>
+                        My Items -
                     </p>
                 </div>
             </Slide>
 
             <Slide left>
-                <div className="px-8 py-6 w-[100%]">
+                <div className="px-6 py-6 w-[100%]">
                     <div
                         className="grid gap-8 items-start justify-end lg:justify-center w-[100%]">
                         <div className="relative group">
@@ -105,7 +105,7 @@ const MyItems = () => {
                                                     <th
                                                         scope="col"
                                                         className="px-1 lg:px-6 py-3">
-                                                        Quantity
+                                                        Quan
                                                     </th>
 
 
@@ -119,7 +119,7 @@ const MyItems = () => {
                                                     <th
                                                         scope="col"
                                                         className="px-1 lg:px-6 py-3">
-                                                        Delete
+                                                        Del
                                                     </th>
                                                 </tr>
                                             </thead>

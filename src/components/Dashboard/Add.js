@@ -49,8 +49,8 @@ const Add = () => {
 
             {/* Header title */}
             <Zoom right>
-                <div className='pl-[15%] py-4 flex items-end gap-6 bg-gradient-to-bl from-gray-500 rounded-l-3xl mb-10'>
-                    <p className='text-5xl font-semibold text-transparent bg-clip-text bg-gradient-to-tr  from-white to-gray-500 '>ADD NEW ITEMS -</p>
+                <div className='pl-[30px] py-4 flex items-end gap-6 bg-gray-500 rounded-l-3xl mb-10'>
+                    <p className='text-3xl font-semibold text-white pl-4 '>Add Items -</p>
 
                 </div>
             </Zoom>
@@ -58,7 +58,7 @@ const Add = () => {
 
             {/* Add new data section */}
             <Bounce cascade>
-                <div className="px-8 py-20 w-[20%] mx-auto">
+                <div className="pl-8 py-20 w-[20%] mx-auto">
                     <div className="grid gap-8 items-start justify-center w-[75%] mx-auto">
                         <div className="relative group">
                             <div className="absolute -inset-0.5 bg-gradient-to-r from-pink-600 to-purple-600 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
@@ -66,13 +66,13 @@ const Add = () => {
                             {/* form started */}
                             <form
                                 onSubmit={handleSubmit}
-                                className=' flex justify-center items-center flex-col w-[380px] rounded-lg   relative  my-auto bg-black text-white'>
+                                className=' flex justify-center items-center flex-col px-2 md:w-[380px] rounded-lg   relative  my-auto bg-black text-white'>
                                 {/* logo */}
                                 <img className=' h-16' src={logo} alt="" />
 
                                 {/* name input */}
                                 <input
-                                    className=' bg-transparent border-2 border-white w-[330px]  h-10 pl-4 mb-4 rounded-lg'
+                                    className=' bg-transparent border-2 border-white md:w-[330px]  h-10 pl-4 mb-4 rounded-lg'
                                     type="text"
                                     name="name"
                                     placeholder='Name'
@@ -84,7 +84,7 @@ const Add = () => {
 
                                 {/* description input */}
                                 <textarea
-                                    className=' bg-transparent border-2 border-white w-[330px]  pt-4 pl-4 mb-4 rounded-lg'
+                                    className=' bg-transparent border-2 border-white md:w-[330px]  pt-4 pl-4 mb-4 rounded-lg'
                                     type="text"
                                     name="description"
                                     placeholder='Description'
@@ -96,7 +96,7 @@ const Add = () => {
 
                                 {/* image input */}
                                 <input
-                                    className=' bg-transparent border-2 border-white w-[330px]  h-10 pl-4 mb-4 rounded-lg'
+                                    className=' bg-transparent border-2 border-white md:w-[330px]  h-10 pl-4 mb-4 rounded-lg'
                                     type="text"
                                     name="img"
                                     placeholder='Photo URL'
@@ -108,7 +108,7 @@ const Add = () => {
 
                                 {/* supplier name input */}
                                 <input
-                                    className=' bg-transparent border-2 border-white w-[330px]  h-10 pl-4 mb-4 rounded-lg'
+                                    className=' bg-transparent border-2 border-white md:w-[330px]  h-10 pl-4 mb-4 rounded-lg'
                                     type="text"
                                     name="supplier"
                                     placeholder='Supplier Name'
@@ -120,7 +120,7 @@ const Add = () => {
 
                                 {/* quantity input */}
                                 <input
-                                    className=' bg-transparent border-2 border-white w-[330px]  h-10 pl-4 mb-4 rounded-lg'
+                                    className=' bg-transparent border-2 border-white md:w-[330px]  h-10 pl-4 mb-4 rounded-lg'
                                     type="number"
                                     min='0'
                                     name="quantity"
@@ -131,7 +131,7 @@ const Add = () => {
 
                                 {/* submit button */}
                                 <button
-                                    className=' text-lg font-semibold text-gray-700 hover:text-white font-serif px-4 py-2 rounded-lg mb-4 bg-white w-[330px] transform duration-500 hover:scale-110 hover:bg-gray-400'>Add</button>
+                                    className=' text-lg font-semibold text-gray-700 hover:text-white font-serif px-4 py-2 rounded-lg mb-4 bg-white md:w-[330px] transform duration-500 hover:scale-110 hover:bg-gray-400'>Add</button>
 
                             </form>
                         </div>
