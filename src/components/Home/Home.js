@@ -2,10 +2,10 @@ import Header from '../shared/Header';
 import Footer from '../shared/Footer';
 import JoinNow from './JoinNow';
 import ExploreOurRockets from './ExploreOurRockets';
-import Banner from './Banner';
 import VideoSection from './VideoSection';
 import Partners from './Partners';
 import Contacts from './Contacts';
+import Slider from './Banner/Slider';
 const Home = () => {
 
     return (
@@ -14,7 +14,7 @@ const Home = () => {
                 <Header />
             </div>
             <div className=' absolute top-0 w-[100%] h-[100%]'>
-                <Banner />
+                <Slider />
                 <ExploreOurRockets />
                 <JoinNow />
                 <VideoSection />

@@ -36,7 +36,7 @@ const Header = () => {
         <Slide top>
 
             <nav
-                className={`${nav && !openNav ? 'bg-transparent' : 'bg-black left-[75px] text-white'} h-[80px] sticky top-0 z-40`}>
+                className={`${nav && !openNav ? 'bg-transparent' : 'bg-primary left-[75px] text-white'} h-16 transform duration-500 ease-in-out sticky top-0 z-40`}>
                 <div
                     className=' flex flex-col lg:flex-row w-[90%] mx-auto lg:justify-between lg:items-center'>
                     {/* 1st part of nav */}
