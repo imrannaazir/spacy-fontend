@@ -1,69 +1,26 @@
-import { faAdd, faBars, faHome, faListCheck, faRightFromBracket, faUserCheck, faX } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { signOut } from 'firebase/auth';
-import React, { useState } from 'react';
-import { Slide } from 'react-reveal';
-import { Link } from 'react-router-dom';
-import logo from '../../assets/images/logo.png'
-import auth from '../../firebase.init';
+import React from 'react';
+import { Link, Outlet } from "react-router-dom";
 
 const DashNav = () => {
-    const [open, setOpen] = useState(false)
     return (
-        <Slide left cascade>
-            <div>
-                <div className={`h-screen fixed w-[30px] md:w-[75px] bg-black z-10`}>
-                    {!open && <Slide left>
-
-                        <FontAwesomeIcon
-                            onClick={() => setOpen(!open)}
-                            className='text-white absolute top-4 left-2 md:left-6 text-lg' icon={faBars} /></Slide>}
-
-
-                    <div>
-                        <div className={`text-white mt-[120px] text-lg pl-1 md:pl-6 flex flex-col`}>
-                            <div className='flex flex-col gap-6'>
-                                <Link to='/'><FontAwesomeIcon icon={faHome} /></Link>
-                                <Link to='/admin'><FontAwesomeIcon icon={faListCheck} /></Link>
-                                <Link to='/my-items'><FontAwesomeIcon icon={faUserCheck} /></Link>
-                                <Link to='/add'><FontAwesomeIcon icon={faAdd} /></Link>
-                            </div>
-
-                            <button
-                                onClick={() => signOut(auth)}
-                                className='absolute bottom-6 text-white'>
-                                <FontAwesomeIcon icon={faRightFromBracket} />
-                            </button>
-                        </div>
-                    </div>
-
-
-
-                </div>
-                <div className={`h-screen ${open ? 'fixed' : 'hidden'} w-[150px] bg-gradient-to-r from-black to-gray-800
-                left-[30px] md:left-[75px] text-white z-50`}>
-                    {open && <FontAwesomeIcon
-                        onClick={() => setOpen(!open)}
-                        className='text-white absolute top-4 right-6 text-xs' icon={faX} />}
-                    <div className=' mt-[120px] text-lg pl-4 flex flex-col gap-6 '>
-                        <Link to='/'>Home</Link>
-                        <Link to='/admin'>Manage Items</Link>
-                        <Link to='/my-items'>My Item</Link>
-                        <Link to='/add'>Add Item</Link>
-                    </div>
-                    <button
-                        onClick={() => signOut(auth)}
-                        className=' absolute bottom-6 text-lg pl-4'>Logout</button>
-
-                </div>
-                <img
-                    className={`h-[50px] z-50 ${open ? 'fixed' : 'hidden'} top-12 left-4`}
-                    src={logo}
-                    alt=""
-                />
+        <div class="drawer drawer-mobile">
+            <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
+            <div class="drawer-content flex flex-col items-center justify-center">
+                {/* <!-- Page content here --> */}
+                <Outlet />
+                <label for="my-drawer-2" class="btn btn-primary drawer-button lg:hidden">Open drawer</label>
 
             </div>
-        </Slide>
+            <div class="drawer-side">
+                <label for="my-drawer-2" class="drawer-overlay"></label>
+                <ul class="menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content">
+                    {/* <!-- Sidebar content here --> */}
+                    <li><Link to="/admin">Manage Inventory</Link></li>
+
+                </ul>
+
+            </div>
+        </div>
     );
 };
 
