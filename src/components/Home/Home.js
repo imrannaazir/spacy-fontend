@@ -6,6 +6,7 @@ import VideoSection from './VideoSection';
 import Partners from './Partners';
 import Contacts from './Contacts';
 import Slider from './Banner/Slider';
+import FeturedRocket from './FeturedRocket/FeturedRocket';
 const Home = () => {
 
     return (
@@ -16,11 +17,12 @@ const Home = () => {
             <div className=' absolute top-0 w-[100%] h-[100%]'>
                 <Slider />
                 <ExploreOurRockets />
-                <JoinNow />
+                <FeturedRocket />
+                {/*  <JoinNow />
                 <VideoSection />
                 <Partners />
                 <Contacts />
-                <Footer />
+                <Footer /> */}
             </div>
         </div>
     );

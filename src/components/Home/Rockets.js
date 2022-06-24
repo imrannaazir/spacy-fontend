@@ -11,7 +11,7 @@ const Rockets = ({ rocket: { name, img, description, quantity, supplier, _id } }
     };
 
     return (
-        <div class="card w-96 bg-base-100 shadow-xl group transform duration-300 hover:scale-95 hover:shadow-none">
+        <div class="card max-w-sm bg-base-100 shadow-xl group transform duration-300 hover:scale-95 hover:shadow-none">
             <figure><img src={img} alt="Shoes" /></figure>
             <div class="card-body">
                 <div className='flex justify-between'>
