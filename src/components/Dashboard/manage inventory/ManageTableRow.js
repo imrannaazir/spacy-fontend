@@ -13,6 +13,7 @@ const ManageTableRow = ({ rocket, rockets, setRockets, i }) => {
             (async function () {
                 const { data } = await axios.delete(`https://nameless-beach-41067.herokuapp.com/rockets/${id}`)
                 const restRockets = await rockets.filter(rocket => rocket._id !== id)
+                console.log(data);
                 setRockets(restRockets);
             })();
         };

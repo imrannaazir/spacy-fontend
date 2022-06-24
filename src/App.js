@@ -36,11 +36,12 @@ function App() {
         {/* dashboard */}
         <Route path='/admin' element={<RequireAuth><DashNav /></RequireAuth>} >
           <Route index element={<ManageInventories />} />
+          <Route path='add' element={<Add />} />
 
         </Route>
         <Route path='/update/:id' element={<RequireAuth><Update /></RequireAuth>} />
         <Route path='/my-items' element={<RequireAuth><MyItems /></RequireAuth>} />
-        <Route path='/add' element={<Add />} />
+
         <Route path='/login' element={<Login />} />
         <Route path='/signup' element={<SignUp />} />
         <Route path='*' element={<NotFound />} />
