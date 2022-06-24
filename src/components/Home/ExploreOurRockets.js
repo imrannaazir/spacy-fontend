@@ -15,17 +15,17 @@ const ExploreOurRockets = () => {
     }, [])
     if (rockets.length === 0) return <Loading />
     return (
-        <div className='bg-[#0F0E0E]' >
+        <div className='' >
             <Bounce >
                 <p
                     id='rockets'
-                    className='text-center py-10 text-4xl font-semibold text-white'>Explore Our Rockets Universe
+                    className='text-center py-10 text-4xl font-semibold text-primary'>Explore Our Rockets Universe
                 </p>
             </Bounce >
 
             <div
                 id='rockets'
-                className=' w-[97%] mx-auto py-12 grid lg:grid-cols-2 gap-y-20'>
+                className=' w-[80%] mx-auto py-12 grid lg:grid-cols-3 gap-6'>
 
 
                 {
