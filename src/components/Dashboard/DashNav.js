@@ -13,9 +13,11 @@ const DashNav = () => {
             </div>
             <div class="drawer-side">
                 <label for="my-drawer-2" class="drawer-overlay"></label>
-                <ul class="menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content">
+                <ul class="menu  overflow-y-auto w-60 bg-base-100 text-base-content">
                     {/* <!-- Sidebar content here --> */}
                     <li><Link to="/admin">Manage Inventory</Link></li>
+                    <li><Link to="/admin/my-items">My Items</Link></li>
+                    <li><Link to="/admin/add">Add New</Link></li>
 
                 </ul>
 

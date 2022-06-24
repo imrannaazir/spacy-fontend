@@ -4,7 +4,6 @@ import Login from './components/Auth/Login';
 import RequireAuth from './components/Auth/RequireAuth';
 import Home from './components/Home/Home';
 import Shop from './components/Shop/Shop';
-// import bg from './assets/videos/bg.mp4'
 import { Toaster } from 'react-hot-toast';
 import Blogs from './components/Blog/Blogs';
 import SignUp from './components/Auth/SignUp';
@@ -12,9 +11,9 @@ import Add from './components/Dashboard/Add';
 
 import Update from './components/Dashboard/Update';
 import NotFound from './components/shared/NotFound';
-import MyItems from './components/Dashboard/MyItems';
 import DashNav from './components/Dashboard/DashNav';
 import ManageInventories from './components/Dashboard/manage inventory/ManageInventories';
+import MyItems from './components/Dashboard/my items/MyItems';
 
 function App() {
   return (
@@ -37,10 +36,10 @@ function App() {
         <Route path='/admin' element={<RequireAuth><DashNav /></RequireAuth>} >
           <Route index element={<ManageInventories />} />
           <Route path='add' element={<Add />} />
+          <Route path='my-items' element={<MyItems />} />
 
         </Route>
         <Route path='/update/:id' element={<RequireAuth><Update /></RequireAuth>} />
-        <Route path='/my-items' element={<RequireAuth><MyItems /></RequireAuth>} />
 
         <Route path='/login' element={<Login />} />
         <Route path='/signup' element={<SignUp />} />
