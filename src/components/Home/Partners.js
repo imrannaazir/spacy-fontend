@@ -20,15 +20,23 @@ const Partners = () => {
         slidesToShow: 3,
         slidesToScroll: 1,
         autoplay: true,
-        speed: 4000,
-        autoplaySpeed: 0,
+        speed: 5000,
+        autoplaySpeed: 5000,
         cssEase: "linear"
     };
     return (
-        <div style={{ backgroundImage: `url(https://www.spacex.com/static/images/backgrounds-2022/crew-3-return/pre-undocking/Homepage_Desktop.webp)`, backgroundAttachment: "fixed" }}
-            class=" bg-cover h-screen gap-10 bg-fixed flex justify-center items-center">
+        <div >
             <div className=' w-[80%] mx-auto mt-20'>
-                <p className=' text-4xl text-white to-gray-700 text-center font-semibold'>Our Partners</p>
+
+                <div>
+                    <div className='flex items-end justify-center'>
+                        <div className='w-[50px] h-[1px] bg-primary'></div>
+                        <p className='text-center mt-10 text-xl font-[Courgette] text-primary '>We Love</p><div className='w-[50px] h-[1px] bg-primary'></div>
+                    </div>
+                    <p
+                        id='rockets'
+                        className='text-center mb-6 text-4xl font-semibold text-black uppercase'>Our Partners </p>
+                </div>
 
                 <div>
                     <Slider {...settings} className='flex'>

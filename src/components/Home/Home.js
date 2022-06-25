@@ -9,6 +9,9 @@ import Slider from './Banner/Slider';
 import Drones from './Drones';
 import RocketsCategory from './RocketsCategory';
 import FeaturedRocket from './FeturedRocket/FeaturedRocket';
+import FeaturedDrone from './FeaturedDrone';
+import OurPartners from './Our Partners/OurPartners';
+import OurPartner from './Our Partners/OurPartner';
 const Home = () => {
 
     return (
@@ -21,11 +24,14 @@ const Home = () => {
                 <RocketsCategory />
                 <FeaturedRocket />
                 <Drones />
-                {/*  <JoinNow />
+                <FeaturedDrone />
+                <JoinNow />
+                <OurPartners />
                 <VideoSection />
-                <Partners />
+                {/* <Partners /> */}
                 <Contacts />
-                <Footer /> */}
+
+                <Footer />
             </div>
         </div>
     );

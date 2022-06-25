@@ -17,7 +17,10 @@ const ExploreOurRockets = ({ api }) => {
     return (
         <div className='' >
             <Bounce >
-                <p className='text-center mt-10 text-xl font-[Courgette] text-primary'>Featured products</p>
+                <div className='flex items-end justify-center'>
+                    <div className='w-[50px] h-[1px] bg-primary'></div>
+                    <p className='text-center mt-10 text-xl font-[Courgette] text-primary '>Featured products</p><div className='w-[50px] h-[1px] bg-primary'></div>
+                </div>
                 <p
                     id='rockets'
                     className='text-center mb-6 text-4xl font-semibold text-black uppercase'>{api} Products
@@ -25,7 +28,6 @@ const ExploreOurRockets = ({ api }) => {
             </Bounce >
 
             <div
-                id='rockets'
                 className=' w-[80%] mx-auto py-12 grid lg:grid-cols-3 gap-6'>
 
 

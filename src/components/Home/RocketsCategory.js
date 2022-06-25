@@ -3,7 +3,8 @@ import ExploreOurRockets from './ExploreOurRockets';
 
 const RocketsCategory = () => {
     return (
-        <div>
+        <div
+            id='rockets'>
             <ExploreOurRockets api="rockets" />
         </div>
     );

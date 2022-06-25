@@ -7,7 +7,7 @@ const FeaturedRocket = () => {
             </h1>
             <div class="hero min-h-screen ">
                 <div class="hero-content flex-col lg:flex-row gap-20">
-                    <img src="https://d3ezn0y6hdgq62.cloudfront.net/newshepard-specs1.png" class="max-w-sm " alt='' />
+                    <img src="https://d3ezn0y6hdgq62.cloudfront.net/newshepard-specs1.png" class="max-w-xs " alt='' />
                     <div className='flex flex-col gap-12 max-w-sm'>
                         <div>
                             <h1 class="text-2xl font-bold font-[Courgette] text-primary">Crew Capsule
