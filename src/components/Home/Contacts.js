@@ -11,7 +11,7 @@ const Contacts = () => {
                 </div>
                 <p
                     id='rockets'
-                    className='text-center mb-6 text-4xl font-semibold text-black uppercase'> SIGN UP FOR LATEST NEWS</p>
+                    className='text-center mb-6 text-2xl lg:text-4xl font-semibold text-black uppercase'> SIGN UP FOR LATEST NEWS</p>
             </div>
             <div>
                 <div className='max-w-[800px] min-w-[320px] relative'>

@@ -1,9 +1,7 @@
 import React from 'react';
-import image from "../../assets/images/join-us.jpg"
 const VideoSection = () => {
     return (
-        <div className='mb-10'>
-
+        <div class="bg-base-200 pb-16">
             <div>
                 <div className='flex items-end justify-center'>
                     <div className='w-[50px] h-[1px] bg-primary'></div>
@@ -11,17 +9,25 @@ const VideoSection = () => {
                 </div>
                 <p
                     id='rockets'
-                    className='text-center mb-6 text-4xl font-semibold text-black uppercase'> WHAT OUR PARTNERS SAY
+                    className='text-center mb-6 text-2xl lg:text-4xl font-semibold text-black uppercase'> WHAT OUR PARTNERS SAY
                 </p>
             </div>
-            <div className='w-[80%] mx-auto grid lg:grid-cols-2 gap-6'>
-                <iframe className='md:w-[392px] lg:w-[560px] md:h-[220px] lg:h-[315px] hover:scale-105 duration-200' src="https://www.youtube.com/embed/TeVbYCIFVa8" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+            <div class="grid lg:grid-cols-2 gap-6 mt-16 mb-24">
+                <iframe
+                    className='w-[80%] h-[200px] lg:h-[300px] mx-auto '
+                    src="https://www.youtube.com/embed/TeVbYCIFVa8" title="YouTube video player"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+                <iframe
+                    className='w-[80%] h-[200px]  lg:h-[300px] mx-auto '
+                    src="https://www.youtube.com/embed/mQxImR01pg8" title="YouTube video player"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
 
-
-                <iframe className='md:w-[392px] lg:w-[560px] md:h-[220px] lg:h-[315px]  hover:scale-105 duration-200' src="https://www.youtube.com/embed/mQxImR01pg8" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
 
             </div>
         </div>
+
     );
 };
 

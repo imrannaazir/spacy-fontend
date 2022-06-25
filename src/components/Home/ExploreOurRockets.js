@@ -23,7 +23,7 @@ const ExploreOurRockets = ({ api }) => {
                 </div>
                 <p
                     id='rockets'
-                    className='text-center mb-6 text-4xl font-semibold text-black uppercase'>{api} Products
+                    className='text-center mb-6 text-2xl lg:text-4xl font-semibold text-black uppercase'>{api} Products
                 </p>
             </Bounce >
 

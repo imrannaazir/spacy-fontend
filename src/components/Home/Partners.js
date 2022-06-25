@@ -35,7 +35,7 @@ const Partners = () => {
                     </div>
                     <p
                         id='rockets'
-                        className='text-center mb-6 text-4xl font-semibold text-black uppercase'>Our Partners </p>
+                        className='text-center mb-6 text-3xl lg:text-4xl font-semibold text-black uppercase'>Our Partners </p>
                 </div>
 
                 <div>

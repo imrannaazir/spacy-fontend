@@ -21,7 +21,7 @@ const OurPartners = () => {
                 </div>
                 <p
                     id='rockets'
-                    className='text-center mb-6 text-4xl font-semibold text-black uppercase'> WHAT OUR PARTNERS SAY
+                    className='text-center mb-6 text-2xl lg:text-4xl font-semibold text-black uppercase'> WHAT OUR PARTNERS SAY
                 </p>
             </div>
             <Swiper
