@@ -11,7 +11,7 @@ const Update = () => {
     const [rocket, setRocket] = useState({});
     useEffect(() => {
         (async function () {
-            const { data } = await axios.get(`https://nameless-beach-41067.herokuapp.com/rockets/${id}`)
+            const { data } = await axios.get(`https://limitless-beach-86891.herokuapp.com/rockets/${id}`)
             setRocket(data)
         })()
     }, [id])
@@ -31,7 +31,7 @@ const Update = () => {
             if (proceed) {
                 (async function () {
                     console.log(updatedRocket);
-                    const { data } = await axios.put(`https://nameless-beach-41067.herokuapp.com/rockets/${_id}`, updatedRocket)
+                    const { data } = await axios.put(`https://limitless-beach-86891.herokuapp.com/rockets/${_id}`, updatedRocket)
                     navigate('/');
                     console.log(data);
                 })();
@@ -53,7 +53,7 @@ const Update = () => {
         if (proceed) {
             (async function () {
                 console.log(updatedRocket);
-                const { data } = await axios.put(`https://nameless-beach-41067.herokuapp.com/rockets/${_id}`, updatedRocket)
+                const { data } = await axios.put(`https://limitless-beach-86891.herokuapp.com/rockets/${_id}`, updatedRocket)
             })();
             setRocket(updatedRocket);
             navigate('/')

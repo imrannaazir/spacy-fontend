@@ -1,6 +1,6 @@
 import React from 'react';
 
-const FeturedRocket = () => {
+const FeaturedRocket = () => {
     return (
         <>
             <h1 className='text-3xl font-semibold  text-primary text-center mb-12'>Meet New Shepard
@@ -57,4 +57,4 @@ const FeturedRocket = () => {
     );
 };
 
-export default FeturedRocket;
+export default FeaturedRocket;

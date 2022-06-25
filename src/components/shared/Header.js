@@ -95,7 +95,7 @@ const Header = () => {
                                         className='transform  duration-500 hover:scale-75 flex items-center justify-center'>
 
                                         <img
-                                            className=' w-14 rounded-full'
+                                            className=' w-12 rounded-full'
                                             src={user?.photoURL ? user?.photoURL : 'https://png.pngitem.com/pimgs/s/130-1300400_user-hd-png-download.png'}
                                             alt="" />
                                         <FontAwesomeIcon className='text-xl' icon={faCaretDown} />
@@ -125,7 +125,7 @@ const Header = () => {
                                     className='transform  duration-500 hover:scale-75 flex items-center'>
 
                                     <img
-                                        className=' w-14 rounded-full'
+                                        className=' w-12 rounded-full'
                                         src={user?.photoURL ? user?.photoURL : 'https://png.pngitem.com/pimgs/s/130-1300400_user-hd-png-download.png'}
                                         alt="" />
                                     <FontAwesomeIcon className='text-xl' icon={faCaretDown} />

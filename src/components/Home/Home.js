@@ -6,7 +6,9 @@ import VideoSection from './VideoSection';
 import Partners from './Partners';
 import Contacts from './Contacts';
 import Slider from './Banner/Slider';
-import FeturedRocket from './FeturedRocket/FeturedRocket';
+import Drones from './Drones';
+import RocketsCategory from './RocketsCategory';
+import FeaturedRocket from './FeturedRocket/FeaturedRocket';
 const Home = () => {
 
     return (
@@ -16,8 +18,9 @@ const Home = () => {
             </div>
             <div className=' absolute top-0 w-[100%] h-[100%]'>
                 <Slider />
-                <ExploreOurRockets />
-                <FeturedRocket />
+                <RocketsCategory />
+                <FeaturedRocket />
+                <Drones />
                 {/*  <JoinNow />
                 <VideoSection />
                 <Partners />

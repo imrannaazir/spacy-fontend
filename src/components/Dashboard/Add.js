@@ -26,7 +26,7 @@ const Add = () => {
         const newProduct = { ...data, email: user?.email }
         console.log(newProduct);
         (async function () {
-            const { data } = await axios.post('https://nameless-beach-41067.herokuapp.com/rockets', newProduct)
+            const { data } = await axios.post('https://limitless-beach-86891.herokuapp.com/rockets', newProduct)
             console.log(data);
         })();
         reset();
@@ -63,7 +63,31 @@ const Add = () => {
                         )}
                     </label>
                 </div>
-                {/* Product name */}
+                {/* Product category */}
+                <div className="form-control flex gap-2 max-w-xs lg:max-w-md ">
+                    <label class="input-group font-semibold">
+                        Product Category
+                    </label>
+                    <input
+                        {...register("category", {
+                            required: {
+                                value: true,
+                                message: "Product category is required",
+                            },
+                        })}
+                        type="text"
+                        placeholder="Enter product category."
+                        class="input input-bordered rounded-sm"
+                    />
+                    <label class="label">
+                        {errors.category?.type === "required" && (
+                            <span class="label-text-alt text-error">
+                                {errors.category.message}
+                            </span>
+                        )}
+                    </label>
+                </div>
+                {/* Product description */}
                 <div className="form-control flex gap-2 max-w-xs lg:max-w-md ">
                     <label class="input-group font-semibold">
                         Product Description
@@ -88,7 +112,7 @@ const Add = () => {
                     </label>
                 </div>
 
-                {/* Product name */}
+                {/* Product img */}
                 <div className="form-control flex gap-2 max-w-xs lg:max-w-md ">
                     <label class="input-group font-semibold">
                         Product URL

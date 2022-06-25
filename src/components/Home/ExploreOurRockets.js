@@ -4,22 +4,23 @@ import { Bounce } from 'react-reveal';
 import Loading from '../shared/Loading';
 import Rockets from './Rockets';
 
-const ExploreOurRockets = () => {
+const ExploreOurRockets = ({ api }) => {
     const [rockets, setRockets] = useState([])
     useEffect(() => {
         (async function () {
-            const { data } = await axios.get('https://nameless-beach-41067.herokuapp.com/rockets')
+            const { data } = await axios.get(`https://limitless-beach-86891.herokuapp.com/${api}`)
             const rockets = data.slice(0, 6)
             setRockets(rockets);
         })()
-    }, [])
+    }, [api])
     if (rockets.length === 0) return <Loading />
     return (
         <div className='' >
             <Bounce >
+                <p className='text-center mt-10 text-xl font-[Courgette] text-primary'>Featured products</p>
                 <p
                     id='rockets'
-                    className='text-center py-10 text-4xl font-semibold text-primary'>Explore Our Rockets Universe
+                    className='text-center mb-6 text-4xl font-semibold text-black uppercase'>{api} Products
                 </p>
             </Bounce >
 

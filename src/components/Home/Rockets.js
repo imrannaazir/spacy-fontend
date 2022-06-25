@@ -24,7 +24,8 @@ const Rockets = ({ rocket: { name, img, description, quantity, supplier, _id } }
                 <p>{description.slice(0, 50)}...</p>
                 <div class="card-actions justify-end">
 
-                    <button onClick={() => navigateToUpdate(_id)} className='btn btn-outline btn-primary rounded-full font-normal'>View Details</button>
+                    <button onClick={() => navigateToUpdate(_id)} className='btn text-white btn-sm btn-primary rounded-full font-normal'>Update</button>
+                    <button onClick={() => navigateToUpdate(_id)} className='btn btn-outline btn-sm btn-primary rounded-full font-normal'>Details</button>
 
                 </div>
             </div>
