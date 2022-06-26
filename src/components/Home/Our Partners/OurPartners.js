@@ -4,6 +4,9 @@ import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 import "./partner.css"
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from 'react';
 
 // import required modules
 import { EffectCoverflow, Autoplay } from "swiper";
@@ -11,8 +14,14 @@ import OurPartner from './OurPartner';
 
 
 const OurPartners = () => {
+    //aos
+    useEffect(() => {
+        AOS.init({
+            duration: 3000
+        })
+    }, [])
     return (
-        <div className='lg:px-16 py-16'>
+        <div data-aos="fade-up" className='lg:px-16 py-16'>
 
             <div>
                 <div className='flex items-end justify-center'>
@@ -24,7 +33,7 @@ const OurPartners = () => {
                     className='text-center mb-6 text-2xl lg:text-4xl font-semibold text-black uppercase'> WHAT OUR PARTNERS SAY
                 </p>
             </div>
-            <Swiper
+            <Swiper data-aos="zoom-in-up"
                 effect={"coverflow"}
                 grabCursor={true}
                 centeredSlides={true}

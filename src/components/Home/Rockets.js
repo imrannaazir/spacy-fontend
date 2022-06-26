@@ -1,17 +1,24 @@
-import { faShuttleSpace } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React, { useState } from 'react';
-import { Bounce, Zoom } from 'react-reveal';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from 'react';
 
 const Rockets = ({ rocket: { name, img, description, quantity, supplier, _id } }) => {
+    //aos
+    useEffect(() => {
+        AOS.init({
+            duration: 3000
+        })
+    }, [])
+
     const navigate = useNavigate()
     const navigateToUpdate = id => {
         navigate(`/update/${id}`)
     };
 
     return (
-        <div class="card max-w-sm bg-base-100 shadow-xl group transform duration-300 hover:scale-95 hover:shadow-none">
+        <div data-aos="fade-up" class="card max-w-sm bg-base-100 shadow-xl group transform duration-300 hover:scale-95 hover:shadow-none">
             <figure><img src={img} alt="Shoes" /></figure>
             <div class="card-body">
                 <div className='flex justify-between'>

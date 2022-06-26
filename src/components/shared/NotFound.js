@@ -7,7 +7,7 @@ const NotFound = () => {
         <div>
             <Header />
 
-            <div className=' h-screen flex justify-center items-center '>
+            <div className=' h-screen flex justify-center items-center  bg-base-100'>
                 <div className='w-[100px] fixed'>
                     <img
                         src="https://physicsgurukul.com/wp-content/uploads/2019/07/db1oiuj-3dd55ff6-89be-4d60-830f-494b026904b5.gif"

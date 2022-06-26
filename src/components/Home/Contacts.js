@@ -1,8 +1,17 @@
 import React from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from 'react';
 const Contacts = () => {
+    //aos
+    useEffect(() => {
+        AOS.init({
+            duration: 3000
+        })
+    }, [])
     return (
-        <div className='flex flex-col items-center mb-10'>
-            <div>
+        <div data-aos="fade-right" className='flex flex-col items-center mb-10'>
+            <div >
                 <div className='flex items-end justify-center'>
                     <div className='w-[50px] h-[1px] bg-primary'></div>
                     <p className='text-center mt-10 text-xl font-[Courgette] text-primary '>Our News

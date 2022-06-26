@@ -1,18 +1,15 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import logo from '../../assets/images/logo.png'
 import auth from '../../firebase.init';
 import { useAuthState } from 'react-firebase-hooks/auth';
 
 import NavLinks from './NavLinks';
 import DropdownLinks from './DropdownLinks';
-
+import Loading from './Loading';
 
 const Header = () => {
     const [nav, setNav] = useState(true);
     const [user, loading] = useAuthState(auth);
-
-
     // handle header bg by scrolling
     const handleNavBg = () => {
         if (window.scrollY > 80) {
@@ -26,14 +23,14 @@ const Header = () => {
     console.log(nav);
     //loading
     if (loading) {
-        return <div className=' h-[100px] w-[100x]'> Loading.. </div>
+        return <Loading />
     };
 
     return (
         <div class={`navbar text-base-100 transform duration-200 px-8 ${nav || "bg-primary"}`} >
             {/* first part of navbar ,, logo here */}
             <div class="navbar-start">
-                <a href='' class="">
+                <a href='#home' class="">
                     <img className='h-12' src={logo} alt="" />
                 </a>
             </div>
