@@ -1,144 +1,192 @@
-import React from 'react';
-import { Bounce, Slide, Zoom } from 'react-reveal';
-import DashNav from './DashNav';
-import logo from '../../assets/images/logo.png'
+
 import axios from 'axios';
+import toast from 'react-hot-toast';
+import { useForm } from 'react-hook-form';
+import { useNavigate } from "react-router-dom"
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
-import Loading from '../shared/Loading';
-import toast from 'react-hot-toast';
-import { useNavigate } from 'react-router-dom';
 
 
 const Add = () => {
-    const [user, loading] = useAuthState(auth);
-    const navigate = useNavigate();
-    //handle submit function
-    if (loading) {
-        <Loading />
-    };
+    const navigate = useNavigate()
+    const [user] = useAuthState(auth)
 
-    // handle add submit
-    const handleSubmit = e => {
-        e.preventDefault();
-        const newRocket = {
-            name: e.target.name.value,
-            description: e.target.description.value,
-            img: e.target.img.value,
-            supplier: e.target.supplier.value,
-            quantity: e.target.quantity.value,
-            email: user.email
-        };
 
-        // conformation and post new data
-        const proceed = window.confirm(`Are You Sure You want to add ${newRocket.name}?`);
-        if (proceed) {
-            (async function () {
-                const { data } = await axios.post('https://nameless-beach-41067.herokuapp.com/rockets', newRocket)
+    const {
+        register,
+        formState: { errors },
+        handleSubmit,
+        reset,
+    } = useForm({ mode: onchange });
 
-            })();
-            e.target.reset();
-            navigate('/my-items');
-            toast.success('Successfully uploaded!')
-        };
+
+
+    const onSubmit = (data) => {
+        console.log(data);
+        const newProduct = { ...data, email: user?.email }
+        console.log(newProduct);
+        (async function () {
+            const { data } = await axios.post('https://limitless-beach-86891.herokuapp.com/rockets', newProduct)
+            console.log(data);
+        })();
+        reset();
+        navigate('/my-items');
+        toast.success('Successfully uploaded!')
     };
 
     return (
-        <div>
-            <DashNav />
+        <div className='w-full min-h-screen bg-base-200'>
+            <p className='bg-primary h-16 text-2xl font-semibold text-base-100 pl-6 flex items-center sticky top-0 left-0 z-50 '>Add New Product</p>
+            <form onSubmit={handleSubmit(onSubmit)} class="flex flex-col bg-base-100 my-4 mx-6  p-4">
 
-            {/* Header title */}
-            <Zoom right>
-                <div className='pl-[30px] md:pl-[75px] py-4 flex items-end gap-6 bg-gray-500 rounded-l-3xl mb-10'>
-                    <p className='text-3xl font-semibold text-white pl-4 '>Add Items -</p>
-
+                {/* Product name */}
+                <div className="form-control flex gap-2 max-w-xs lg:max-w-md ">
+                    <label class="input-group font-semibold">
+                        Product Name
+                    </label>
+                    <input
+                        {...register("name", {
+                            required: {
+                                value: true,
+                                message: "Product name is required",
+                            },
+                        })}
+                        type="text"
+                        placeholder="Enter product name."
+                        class="input input-bordered rounded-sm"
+                    />
+                    <label class="label">
+                        {errors.name?.type === "required" && (
+                            <span class="label-text-alt text-error">
+                                {errors.name.message}
+                            </span>
+                        )}
+                    </label>
                 </div>
-            </Zoom>
-
-
-            {/* Add new data section */}
-            <Bounce cascade>
-                <div className="pl-8 py-20 w-[20%] mx-auto">
-                    <div className="grid gap-8 items-start justify-center w-[75%] mx-auto">
-                        <div className="relative group">
-                            <div className="absolute -inset-0.5 bg-gradient-to-r from-pink-600 to-purple-600 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
-
-                            {/* form started */}
-                            <form
-                                onSubmit={handleSubmit}
-                                className=' flex justify-center items-center flex-col px-2 md:w-[380px] rounded-lg   relative  my-auto bg-black text-white'>
-                                {/* logo */}
-                                <img className=' h-16' src={logo} alt="" />
-
-                                {/* name input */}
-                                <input
-                                    className=' bg-transparent border-2 border-white md:w-[330px]  h-10 pl-4 mb-4 rounded-lg'
-                                    type="text"
-                                    name="name"
-                                    placeholder='Name'
-                                    required
-                                    autoComplete='off'
-                                />
-
-                                <br />
-
-                                {/* description input */}
-                                <textarea
-                                    className=' bg-transparent border-2 border-white md:w-[330px]  pt-4 pl-4 mb-4 rounded-lg'
-                                    type="text"
-                                    name="description"
-                                    placeholder='Description'
-                                    required
-                                    autoComplete='off'
-                                />
-
-                                <br />
-
-                                {/* image input */}
-                                <input
-                                    className=' bg-transparent border-2 border-white md:w-[330px]  h-10 pl-4 mb-4 rounded-lg'
-                                    type="text"
-                                    name="img"
-                                    placeholder='Photo URL'
-                                    required
-                                    autoComplete='off'
-                                />
-
-                                <br />
-
-                                {/* supplier name input */}
-                                <input
-                                    className=' bg-transparent border-2 border-white md:w-[330px]  h-10 pl-4 mb-4 rounded-lg'
-                                    type="text"
-                                    name="supplier"
-                                    placeholder='Supplier Name'
-                                    required
-                                    autoComplete='off'
-                                />
-
-                                <br />
-
-                                {/* quantity input */}
-                                <input
-                                    className=' bg-transparent border-2 border-white md:w-[330px]  h-10 pl-4 mb-4 rounded-lg'
-                                    type="number"
-                                    min='0'
-                                    name="quantity"
-                                    placeholder='Quantity'
-                                    required
-                                    autoComplete='off' />
-
-
-                                {/* submit button */}
-                                <button
-                                    className=' text-lg font-semibold text-gray-700 hover:text-white font-serif px-4 py-2 rounded-lg mb-4 bg-white md:w-[330px] transform duration-500 hover:scale-110 hover:bg-gray-400'>Add</button>
-
-                            </form>
-                        </div>
-                    </div>
+                {/* Product category */}
+                <div className="form-control flex gap-2 max-w-xs lg:max-w-md ">
+                    <label class="input-group font-semibold">
+                        Product Category
+                    </label>
+                    <input
+                        {...register("category", {
+                            required: {
+                                value: true,
+                                message: "Product category is required",
+                            },
+                        })}
+                        type="text"
+                        placeholder="Enter product category."
+                        class="input input-bordered rounded-sm"
+                    />
+                    <label class="label">
+                        {errors.category?.type === "required" && (
+                            <span class="label-text-alt text-error">
+                                {errors.category.message}
+                            </span>
+                        )}
+                    </label>
                 </div>
-            </Bounce>
+                {/* Product description */}
+                <div className="form-control flex gap-2 max-w-xs lg:max-w-md ">
+                    <label class="input-group font-semibold">
+                        Product Description
+                    </label>
+                    <textarea
+                        {...register("description", {
+                            required: {
+                                value: true,
+                                message: "Product description is required",
+                            },
+                        })}
+                        type="text"
+                        placeholder="Enter description"
+                        class="input input-bordered rounded-sm h-40"
+                    />
+                    <label class="label">
+                        {errors.description?.type === "required" && (
+                            <span class="label-text-alt text-error">
+                                {errors.description.message}
+                            </span>
+                        )}
+                    </label>
+                </div>
 
+                {/* Product img */}
+                <div className="form-control flex gap-2 max-w-xs lg:max-w-md ">
+                    <label class="input-group font-semibold">
+                        Product URL
+                    </label>
+                    <input
+                        {...register("img", {
+                            required: {
+                                value: true,
+                                message: "product url is required",
+                            },
+                        })}
+                        type="text"
+                        placeholder="Enter product image url"
+                        class="input input-bordered rounded-sm"
+                    />
+                    <label class="label">
+                        {errors.img?.type === "required" && (
+                            <span class="label-text-alt text-error">
+                                {errors.img.message}
+                            </span>
+                        )}
+                    </label>
+                </div>
+                {/* Product name */}
+                <div className="form-control flex gap-2 max-w-xs lg:max-w-md ">
+                    <label class="input-group font-semibold">
+                        Supplier Name
+                    </label>
+                    <input
+                        {...register("supplier", {
+                            required: {
+                                value: true,
+                                message: "supplier name is required",
+                            },
+                        })}
+                        type="text"
+                        placeholder="Enter Supplier name"
+                        class="input input-bordered rounded-sm"
+                    />
+                    <label class="label">
+                        {errors.supplier?.type === "required" && (
+                            <span class="label-text-alt text-error">
+                                {errors.supplier.message}
+                            </span>
+                        )}
+                    </label>
+                </div>
+                {/* Product name */}
+                <div className="form-control flex gap-2 max-w-xs lg:max-w-md ">
+                    <label class="input-group font-semibold">
+                        Quantity
+                    </label>
+                    <input
+                        {...register("quantity", {
+                            required: {
+                                value: true,
+                                message: "quantity is required",
+                            },
+                        })}
+                        type="number"
+                        placeholder="Enter quantity"
+                        class="input input-bordered rounded-sm"
+                    />
+                    <label class="label">
+                        {errors.quantity?.type === "required" && (
+                            <span class="label-text-alt text-error">
+                                {errors.quantity.message}
+                            </span>
+                        )}
+                    </label>
+                </div>
+
+                <button className='btn w-48 btn-primary text-white font-semibold rounded-sm'>Upload Product</button>
+            </form>
         </div>
     );
 };

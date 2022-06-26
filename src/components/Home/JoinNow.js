@@ -1,29 +1,35 @@
 import React from 'react';
-import { Slide } from 'react-reveal';
-
+import { Link } from 'react-router-dom';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from 'react';
 const JoinNow = () => {
+    //aos
+    useEffect(() => {
+        AOS.init({
+            duration: 3000
+        })
+    }, [])
     return (
-        <div style={{ backgroundImage: `url(https://www.spacex.com/static/images/backgrounds-2021/hls-resized-2.webp)` }}
-            class=" bg-cover h-screen gap-10 bg-fixed flex justify-center items-center">
-            <Slide left>
-                <div
-                    className='w-[95%] lg:w-[80%] mx-auto bg-gradient-to-r from-[#864879] to-[#E9A6A6] rounded-md p-6 flex items-center justify-between my-20 font'>
-                    <div>
-                        <p>Wanna be part of us?</p>
-                        <p
-                            className=' lg:text-3xl  text-white  font-bold'>
-                            Join to SPACEY as an intern & explore the Universe.
-                        </p>
-                    </div>
-
-                    <div >
-                        <button
-                            className='bg-pink-600 text-white px-6 py-2 rounded-full hover:scale-110 duration-500'>
-                            Join
-                        </button>
-                    </div>
+        <div data-aos="fade-up"
+            style={{ backgroundImage: `url('https://images.unsplash.com/photo-1506947411487-a56738267384?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80')` }}
+            class="hero bg-cover min-h-[500px] gap-10 bg-fixed"
+        >
+            <div class="hero-overlay bg-opacity-75"></div>
+            <div class="hero-content text-center text-base-100  lg:flex-row-reverse">
+                <div data-aos="fade-right" class="text-center lg:text-left">
+                    <h1 class="text-5xl font-bold">Store Your Product</h1>
+                    <p class="py-6">
+                        Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
+                        excepturi exercitationem quasi. In deleniti eaque aut repudiandae et
+                        a id nisi.
+                    </p>
+                    <Link to="/admin/add">
+                        <button className='btn btn-outline btn-primary rounded-full'>Be a vendor</button>
+                    </Link>
                 </div>
-            </Slide>
+
+            </div>
         </div>
     );
 };

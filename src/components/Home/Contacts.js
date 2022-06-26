@@ -1,16 +1,33 @@
 import React from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from 'react';
 const Contacts = () => {
+    //aos
+    useEffect(() => {
+        AOS.init({
+            duration: 3000
+        })
+    }, [])
     return (
-        <div style={{ backgroundImage: `url(https://www.spacex.com/static/images/backgrounds-2021/hls-resized-2.webp)` }}
-            class=" bg-cover h-screen gap-10 bg-fixed flex justify-center items-center">
+        <div data-aos="fade-right" className='flex flex-col items-center mb-10'>
+            <div >
+                <div className='flex items-end justify-center'>
+                    <div className='w-[50px] h-[1px] bg-primary'></div>
+                    <p className='text-center mt-10 text-xl font-[Courgette] text-primary '>Our News
 
-            <form className='flex flex-col w-[450px] gap-4 text-white' action="">
-                <p className='text-xl'>Contact US</p>
-                <input className='h-12 rounded-xl pl-4 bg-black border-2 border-blue-500' type="text" placeholder='Your Email' />
-                <input className='h-12 rounded-xl pl-4 bg-black border-2 border-blue-500' type="text" placeholder='Subject' />
-                <textarea className='h-44 rounded-xl pl-4 pt-4 bg-black border-2 border-blue-500' placeholder='Your message' name="" id="" cols="30" rows="10" />
-                <button className='h-12 text-lg font-semibold bg-blue-500 rounded-xl'>Send</button>
-            </form>
+                    </p><div className='w-[50px] h-[1px] bg-primary'></div>
+                </div>
+                <p
+                    id='rockets'
+                    className='text-center mb-6 text-2xl lg:text-4xl font-semibold text-black uppercase'> SIGN UP FOR LATEST NEWS</p>
+            </div>
+            <div>
+                <div className='max-w-[800px] min-w-[320px] relative'>
+                    <input type="text" placeholder="Enter your email here..." class="input input-bordered w-full rounded-full input-info  " />
+                    <button className='btn btn-primary rounded-full text-base-100 absolute right-0'>Subscribe</button>
+                </div>
+            </div>
         </div>
     );
 };
