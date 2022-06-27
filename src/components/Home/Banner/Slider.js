@@ -30,7 +30,7 @@ const Slider = () => {
     ]
     return (
         <>
-            <Swiper
+            <Swiper id='home'
                 spaceBetween={30}
                 centeredSlides={true}
                 autoplay={{

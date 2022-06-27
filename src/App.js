@@ -15,8 +15,8 @@ import MyItems from './components/Dashboard/my items/MyItems';
 
 function App() {
   return (
-    <div className='bg-black'>
-      <Toaster />
+    <div>
+      < Toaster />
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/home' element={<Home />} />
@@ -34,7 +34,7 @@ function App() {
         <Route path='*' element={<NotFound />} />
       </Routes>
 
-    </div>
+    </div >
   );
 }
 

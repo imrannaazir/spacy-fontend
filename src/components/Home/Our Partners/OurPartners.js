@@ -21,7 +21,7 @@ const OurPartners = () => {
         })
     }, [])
     return (
-        <div data-aos="fade-up" className='lg:px-16 py-16'>
+        <div id='partners' data-aos="fade-up" className='lg:px-16 py-16'>
 
             <div>
                 <div className='flex items-end justify-center'>

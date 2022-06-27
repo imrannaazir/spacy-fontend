@@ -1,18 +1,7 @@
-import toast from "react-hot-toast"
 import React from 'react';
-import Loading from '../shared/Loading';
 import Rockets from './Rockets';
-import { useQuery } from 'react-query'
-const ExploreOurRockets = ({ api }) => {
-    const { isLoading, error, data } = useQuery('productsData', () =>
-        fetch(`https://limitless-beach-86891.herokuapp.com/${api}`).then(res =>
-            res.json()
-        )
-    )
+const ExploreOurRockets = ({ products, category }) => {
 
-    if (isLoading) return <Loading />
-    if (error) return toast.error(error.message)
-    const products = data.slice(0, 6)
     return (
         <div data-aos="fade-up" className='' >
 
@@ -22,7 +11,7 @@ const ExploreOurRockets = ({ api }) => {
             </div>
             <p
                 id='rockets'
-                className='text-center mb-6 text-2xl lg:text-4xl font-semibold text-black uppercase'>{api} Products
+                className='text-center mb-6 text-2xl lg:text-4xl font-semibold text-black uppercase'>{category} Products
             </p>
             <div
                 className=' md:w-[90%] lg:w-[80%] mx-auto  grid md:grid-cols-2 md:py-4 lg:grid-cols-3 gap-6'>
