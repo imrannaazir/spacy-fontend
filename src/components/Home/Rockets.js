@@ -4,7 +4,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from 'react';
 
-const Rockets = ({ rocket: { name, img, description, quantity, supplier, _id } }) => {
+const Rockets = ({ product: { name, img, description, quantity, supplier, _id } }) => {
     //aos
     useEffect(() => {
         AOS.init({

@@ -1,18 +1,18 @@
-import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import toast from "react-hot-toast"
+import React from 'react';
 import Loading from '../shared/Loading';
 import Rockets from './Rockets';
-
+import { useQuery } from 'react-query'
 const ExploreOurRockets = ({ api }) => {
-    const [rockets, setRockets] = useState([])
-    useEffect(() => {
-        (async function () {
-            const { data } = await axios.get(`https://limitless-beach-86891.herokuapp.com/${api}`)
-            const rockets = data.slice(0, 6)
-            setRockets(rockets);
-        })()
-    }, [api])
-    if (rockets.length === 0) return <Loading />
+    const { isLoading, error, data } = useQuery('productsData', () =>
+        fetch(`https://limitless-beach-86891.herokuapp.com/${api}`).then(res =>
+            res.json()
+        )
+    )
+
+    if (isLoading) return <Loading />
+    if (error) return toast.error(error.message)
+    const products = data.slice(0, 6)
     return (
         <div data-aos="fade-up" className='' >
 
@@ -29,10 +29,10 @@ const ExploreOurRockets = ({ api }) => {
 
 
                 {
-                    rockets.map(rocket =>
+                    products.map(product =>
                         <Rockets
-                            key={rocket._id}
-                            rocket={rocket}
+                            key={product._id}
+                            product={product}
                         />
 
                     )

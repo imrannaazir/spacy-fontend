@@ -36,7 +36,7 @@ const Add = () => {
 
     return (
         <div className='w-full min-h-screen bg-base-200'>
-            <p className='bg-primary h-16 text-2xl font-semibold text-base-100 pl-6 flex items-center sticky top-0 left-0 z-50 '>Add New Product</p>
+            <p className='bg-primary h-16 text-2xl font-semibold text-base-100 pl-20 flex items-center sticky top-0 left-0 z-50 '>Add New Product</p>
             <form onSubmit={handleSubmit(onSubmit)} class="flex flex-col bg-base-100 my-4 mx-6  p-4">
 
                 {/* Product name */}
