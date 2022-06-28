@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import Header from '../shared/Header';
 import google from '../../assets/images/google.png';
 import github from '../../assets/images/github.png'
 
@@ -88,14 +87,12 @@ const SignUp = () => {
     if (loading || emailLoading || googleLoading || githubLoading) return <Loading />
 
     //error handle
-    if (googleError) {
-        toast.error(googleError.message);
-    };
-    if (githubError) {
-        toast.error(googleError.message);
+    if (googleError || githubError || error || emailError) {
+        toast.error(googleError.message || githubError.message || error.message || emailError.message);
     };
 
-    if (user) {
+
+    if (user || emailUser || googleUser || githubUser) {
         (async function () {
             const email = user?.email;
             if (email) {
@@ -108,13 +105,11 @@ const SignUp = () => {
     };
 
     return (
-        <div className=' h-screen'>
-            <Header />
-
+        <div className=' h-screen flex justify-center items-center'>
             <div
-                className='w-[375px]  mx-auto border-2  mt-20 py-6 text-center rounded-lg shadow-lg'>
+                className='w-[375px]  mx-auto border-2  py-6 text-center rounded-lg shadow-lg bg-base-100'>
                 <p
-                    className=' text-2xl text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-600 font-semibold mb-4'>Sign up to SPACEY
+                    className=' text-2xl text-primary font-semibold mb-4'>Sign up to SPACEY
                 </p>
 
                 {/* form started */}
@@ -125,7 +120,7 @@ const SignUp = () => {
                     {/* email */}
                     <input
                         onChange={changeEmail}
-                        className='w-[330px] px-3 py-1 mx-auto border-2 rounded-full bg-transparent'
+                        className='input input-bordered text-primary mx-6'
                         type="email"
                         placeholder='Enter your email'
                         name="email"
@@ -138,7 +133,7 @@ const SignUp = () => {
                     {/* password */}
                     <input
                         onChange={changePassword}
-                        className='w-[330px] px-3 py-1 mx-auto border-2  mt-5  rounded-full bg-transparent'
+                        className='input input-bordered mx-6 mt-4 text-primary'
                         type="password"
                         placeholder='Create password '
                         autoComplete='off'
@@ -151,7 +146,7 @@ const SignUp = () => {
                     {/* confirm password */}
                     <input
                         onChange={changeConfirmPass}
-                        className='w-[330px] px-3 py-1 mx-auto border-2  my-5  rounded-full bg-transparent'
+                        className='input input-bordered mx-6 text-primary mt-4'
                         type="password"
                         placeholder='Confirm password '
                         autoComplete='off'
@@ -161,7 +156,7 @@ const SignUp = () => {
                     <p className=' pl-6 text-red-500 text-left'>{errors.confirmPassError}</p>
 
                     {/* Sign up button */}
-                    <button className='w-[330px] px-3 py-2 mx-auto  rounded-full  bg-gradient-to-r from-pink-500 hover:from-purple-600 to-purple-600 hover:to-pink-600 duration-500 hover:scale-105' type="submit">Sign up</button>
+                    <button className='w-[330px] btn btn-primary mx-auto mt-4 text-white' type="submit">Sign up</button>
 
                     {/* switch to Login */}
                     <div className='text-left w-[330px] mx-auto'>
@@ -174,11 +169,7 @@ const SignUp = () => {
                 </form>
 
                 {/* or section */}
-                <div className='w-[200px] mx-auto flex items-center my-4'>
-                    <div className='h-[1px] w-full bg-gradient-to-r from-pink-500 to-purple-600 '></div>
-                    <span className='text-white mx-2'>OR</span>
-                    <div className='h-[1px] w-full bg-gradient-to-r from-pink-500 to-purple-600 '></div>
-                </div>
+                <div className='divider w-[80%] mx-auto'>OR</div>
 
 
                 {/* sign up with social media */}
@@ -186,18 +177,18 @@ const SignUp = () => {
                     {/* google */}
                     <button
                         onClick={() => signInWithGoogle()}
-                        className=' w-[330px] mx-auto border-2 rounded-full flex items-center text-white'>
+                        className=' w-[330px] mx-auto btn btn-outline'>
                         <img
-                            className=' w-[24px] mr-[70px] m-1' src={google} alt="" />
+                            className=' w-[24px] mr-4' src={google} alt="" />
                         Continue with Google
                     </button>
 
                     {/* github */}
                     <button
                         onClick={() => signInWithGithub()}
-                        className=' w-[330px] mx-auto border-2 rounded-full flex items-center text-white my-4'>
+                        className=' w-[330px] mx-auto btn btn-outline mt-4'>
                         <img
-                            className=' w-[24px] mr-[70px] m-1' src={github} alt="" />
+                            className=' w-[24px] mr-4 bg-black rounded-full' src={github} alt="" />
                         Continue with GitHub
                     </button>
                 </div>

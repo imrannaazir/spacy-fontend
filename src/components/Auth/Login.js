@@ -1,4 +1,3 @@
-import Header from '../shared/Header';
 import google from '../../assets/images/google.png'
 import { useAuthState, useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGithub, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init'
@@ -63,12 +62,10 @@ const Login = () => {
 
 
     //errors handle
-    if (googleError) {
-        toast.error(googleError.message);
+    if (googleError || emailError || error || githubError) {
+        toast.error(googleError.message || emailError.message || error.message || githubError.message);
     };
-    if (githubError) {
-        toast.error(googleError.message);
-    };
+
 
 
     // handle login with email and pass
@@ -91,7 +88,7 @@ const Login = () => {
     };
 
     // redirect to home or previous page
-    if (user) {
+    if (user || emailUser || githubUser || googleUser) {
         (async function () {
             const email = user?.email;
             if (email) {
@@ -103,15 +100,12 @@ const Login = () => {
     };
 
     return (
-        <div className=' h-screen'>
-            <Header />
-
-
+        <div className='h-screen flex justify-center items-center'>
             <div
-                className='w-[375px]  mx-auto border-2  mt-20 py-6 text-center rounded-lg shadow-lg'>
+                className='w-[375px]  mx-auto border-2  py-6 text-center rounded-lg shadow-lg bg-base-100'>
 
                 <p
-                    className=' text-2xl text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-600 font-semibold mb-4'>Login to SPACEY
+                    className=' text-2xl text-primary font-semibold mb-4'>Login to SPACEY
                 </p>
 
                 {/* form started */}
@@ -122,7 +116,7 @@ const Login = () => {
                     {/* email  */}
                     <input
                         onChange={changeEmail}
-                        className='w-[330px] px-3 py-1 mx-auto border-2 rounded-full bg-transparent'
+                        className='input input-bordered mx-6 text-primary'
                         type="email"
                         placeholder='Enter your email'
                         name=""
@@ -134,7 +128,7 @@ const Login = () => {
                     {/* password */}
                     <input
                         onChange={changePassword}
-                        className='w-[330px] px-3 py-1 mx-auto border-2  mt-5  rounded-full bg-transparent' type="password"
+                        className='input input-bordered mx-6 text-primary mt-4' type="password"
                         placeholder='Enter your password '
                         autoComplete='off'
                         name=""
@@ -154,7 +148,7 @@ const Login = () => {
 
 
                     {/* login button */}
-                    <button className='w-[330px] px-3 py-2 mx-auto  rounded-full  bg-gradient-to-r from-pink-500 hover:from-purple-600 to-purple-600 hover:to-pink-600 duration-500 hover:scale-105' type="submit">Login</button>
+                    <button className='btn btn-primary text-white  mx-6' type="submit">Login</button>
 
                     {/* toggle to sign up */}
                     <div className='text-left w-[330px] mx-auto'>
@@ -165,29 +159,25 @@ const Login = () => {
                 </form>
 
                 {/* or  */}
-                <div className='w-[200px] mx-auto flex items-center my-6'>
-                    <div className='h-[1px] w-full bg-gradient-to-r from-pink-500 to-purple-600 '></div>
-                    <span className='text-white mx-2'>OR</span>
-                    <div className='h-[1px] w-full bg-gradient-to-r from-pink-500 to-purple-600 '></div>
-                </div>
+                <div className='divider w-[80%] mx-auto'>OR</div>
 
                 {/* social sign in */}
                 <div>
                     {/* google */}
                     <button
                         onClick={() => signInWithGoogle()}
-                        className=' w-[330px] mx-auto border-2 rounded-full flex items-center text-white'>
+                        className='w-[330px] btn btn-outline text-primary  '>
                         <img
-                            className=' w-[24px] mr-[70px] m-1' src={google} alt="" />
+                            className=' w-[24px] mr-4' src={google} alt="" />
                         Continue with Google
                     </button>
 
                     {/* git hub */}
                     <button
                         onClick={() => signInWithGithub()}
-                        className=' w-[330px] mx-auto border-2 rounded-full flex items-center text-white my-4'>
+                        className='w-[330px] btn btn-outline text-primary my-4'>
                         <img
-                            className=' w-[24px] mr-[70px] m-1' src={github} alt="" />
+                            className=' w-[24px] bg-black rounded-full mr-4' src={github} alt="" />
                         Continue with GitHub
                     </button>
                 </div>

@@ -3,6 +3,8 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartPlus, faFan, faGear, faHome, faRightFromBracket, faRocket, faSortUp, faUserEdit, } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
+import { signOut } from 'firebase/auth';
+import auth from '../../firebase.init';
 const DropdownLinks = ({ user }) => {
     const liStyle = "flex gap-4 items-center hover:bg-base-200 border-b border-base-200 pl-4 py-3"
     return (
@@ -65,9 +67,9 @@ const DropdownLinks = ({ user }) => {
             <li className={`${liStyle} border-b-0`}> <FontAwesomeIcon
                 className='hover:bg-transparent'
                 icon={faRightFromBracket} />
-                <button
+                <button onClick={() => signOut(auth)}
                     className='hover:bg-transparent'
-                    to="/">Logout</button></li>
+                >Logout</button></li>
             <FontAwesomeIcon className='absolute text-white text-lg -top-[6px] right-6' icon={faSortUp} />
         </>
     );
