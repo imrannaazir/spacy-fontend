@@ -7,13 +7,24 @@ import "./partner.css"
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from 'react';
-
 // import required modules
 import { EffectCoverflow, Autoplay } from "swiper";
 import OurPartner from './OurPartner';
 
 
 const OurPartners = () => {
+    const partners = [
+        {
+            name: "Elon Musk",
+            company: "Space X",
+            img: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Elon_Musk_Royal_Society_%28crop2%29.jpg/1200px-Elon_Musk_Royal_Society_%28crop2%29.jpg"
+        },
+        {
+            name: "Jeff Bezos",
+            company: "Blue Origin",
+            img: "https://assets.change.org/photos/3/rh/bh/VWrhBhlKyGVOeyG-400x400-noPad.jpg?1528862483"
+        },
+    ]
     //aos
     useEffect(() => {
         AOS.init({
@@ -63,37 +74,13 @@ const OurPartners = () => {
                 }}
                 className="mySwiper"
             >
-                <SwiperSlide>
-                    <OurPartner />
-                </SwiperSlide>
-                <SwiperSlide>
-                    <OurPartner />
-                </SwiperSlide>
-                <SwiperSlide>
-                    <OurPartner />
-                </SwiperSlide>
-                <SwiperSlide>
-                    <OurPartner />
-                </SwiperSlide>
-                <SwiperSlide>
-                    <OurPartner />
-                </SwiperSlide>
-                <SwiperSlide>
-                    <OurPartner />
-                </SwiperSlide>
-                <SwiperSlide>
-                    <OurPartner />
-                </SwiperSlide>
-                <SwiperSlide>
-                    <OurPartner />
-                </SwiperSlide>
-                <SwiperSlide>
-                    <OurPartner />
-                </SwiperSlide>
-                <SwiperSlide>
-                    <OurPartner />
-                </SwiperSlide>
-
+                {
+                    partners.map((partner, i) =>
+                        <SwiperSlide>
+                            <OurPartner key={i} partner={partner} />
+                        </SwiperSlide>
+                    )
+                }
             </Swiper>
         </div>
     );
