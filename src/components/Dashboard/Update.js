@@ -65,25 +65,43 @@ const Update = () => {
     }
 
     return (
-        <div className='min-h-screen bg-base-100'>
-            <Link to="/">Home</Link>
-            <div class="card lg:card-side bg-base-100  rounded-none w-[90%] mx-auto">
-                <figure><img className='rounded-xl' src={img} alt="Album" /></figure>
-                <div class="card-body">
-                    <h2 class="card-title">{name}</h2>
-                    <h2 class="card-title">Available: {quantity}</h2>
-                    <p>{description}</p>
-                    <div className='divider' />
-                    <h2>Brand: {supplier}</h2>
-                    <h2>Availability: {quantity == 0 ? "stock out" : "in stock"}</h2>
-                    <h2>SKU: {id}</h2>
-                    <div className='divider' />
-                    <div class="card-actions ">
-                        <button class="btn btn-primary">Listen</button>
+        <>
+            <Header />
+            <div className='min-h-screen bg-base-100'>
+                <div class="hero min-h-[200px]" style={{ backgroundImage: `url(${img})` }}>
+                    <div class="hero-overlay bg-opacity-60"></div>
+                    <div class="hero-content text-center text-neutral-content">
+                        <div class="max-w-md">
+                            <h1 class="mb-5 text-5xl font-bold">{name}</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="card lg:card-side bg-base-100  rounded-none w-[90%] mx-auto py-8">
+                    <figure><img className='rounded-xl w-[500px]' src={img} alt="Album" /></figure>
+                    <div class="card-body">
+                        <h2 class="card-title">{name}</h2>
+                        <h2 class="card-title text-primary">Available: {quantity}</h2>
+                        <p className='text-gray-500'>{description}</p>
+                        <div className='divider' />
+                        <h2>Brand: <span className='text-primary'>{supplier}</span></h2>
+                        <h2>Availability:<span className='text-primary'> {quantity == 0 ? "stock out" : "in stock"}</span></h2>
+                        <h2>SKU: <span className='text-primary'>{id}</span></h2>
+                        <div className='divider' />
+                        <div class="card-actions flex-col">
+                            <form
+                                onSubmit={handleUpdate}
+                                className='flex gap-4'>
+                                <input className='input input-bordered input-primary w-full max-w-xs ' type="number" min='0' name="quantity" placeholder='Quantity' required />
+                                <button type='submit' className='btn btn-primary text-white'>Update</button>
+                            </form>
+                            <button
+                                onClick={handleDelivered}
+                                className='btn btn-block btn-outline btn-primary'>Delivered</button>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </>
         /*  <div>
              <Slide right cascade>
                  <div className=' '>

@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import logo from '../../assets/images/logo.png'
 import auth from '../../firebase.init';
 import { useAuthState } from 'react-firebase-hooks/auth';
-
 import NavLinks from './NavLinks';
 import DropdownLinks from './DropdownLinks';
 import Loading from './Loading';
@@ -20,14 +19,13 @@ const Header = () => {
         };
     };
     window.addEventListener('scroll', handleNavBg);
-    console.log(nav);
     //loading
     if (loading) {
         return <Loading />
     };
 
     return (
-        <div class={`navbar text-base-100 transform duration-200 px-8 ${nav || "bg-primary"}`} >
+        <div class={`navbar text-base-100 transform duration-200 px-8 ${nav || "bg-primary"} fixed top-0 z-50 w-[100%]`} >
             {/* first part of navbar ,, logo here */}
             <div class="navbar-start">
                 <a href='#home' class="">

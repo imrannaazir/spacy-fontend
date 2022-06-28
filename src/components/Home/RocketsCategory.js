@@ -4,10 +4,8 @@ import ExploreOurRockets from './ExploreOurRockets';
 import toast from "react-hot-toast"
 import { useQuery } from 'react-query'
 
-
-
 const RocketsCategory = () => {
-    const { isLoading, error, data, refetch } = useQuery('productsData', () =>
+    const { isLoading, error, data, refetch } = useQuery('rocketsData', () =>
         fetch('https://limitless-beach-86891.herokuapp.com/rockets').then(res =>
             res.json()
         )

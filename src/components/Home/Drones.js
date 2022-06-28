@@ -6,22 +6,19 @@ import Loading from '../shared/Loading';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import axios from 'axios';
+import { useQuery } from 'react-query'
 
 
 const Drones = () => {
-    const [loading, setLoading] = useState(false)
-    const [products, setProducts] = useState([])
-    useEffect(() => {
-        (async function () {
-            setLoading(true)
-            const { data } = await axios.get(`https://limitless-beach-86891.herokuapp.com/drones`)
-            setProducts(data.slice(0, 6))
-            setLoading(false)
-
-        })()
-    }, [])
-    //is loading 
-    if (loading) return <Loading />
+    const { isLoading, error, data, refetch } = useQuery('productsData', () =>
+        fetch('https://limitless-beach-86891.herokuapp.com/drones').then(res =>
+            res.json()
+        )
+    )
+    if (isLoading) return <Loading />
+    // if (error) return toast.error(error.message)
+    // refetch()
+    const products = data.slice(0, 6)
     return (
         <div
             id='drones'>
