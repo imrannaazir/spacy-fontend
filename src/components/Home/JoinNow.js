@@ -12,7 +12,7 @@ const JoinNow = () => {
     }, [])
     return (
         <div id='join' data-aos="fade-up"
-            style={{ backgroundImage: `url('https://images.unsplash.com/photo-1506947411487-a56738267384?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80')` }}
+            style={{ backgroundImage: `url('https://i.ibb.co/WWhjsys/store-your-product.webp')` }}
             class="hero bg-cover min-h-[500px] gap-10 bg-fixed"
         >
             <div class="hero-overlay bg-opacity-75"></div>

@@ -15,14 +15,14 @@ const Slider = () => {
     const banners = [
         {
             category: "rockets",
-            img: "https://i.ibb.co/wcHN9Zs/rocket.jpg",
+            img: "https://i.ibb.co/tHV2SfT/rocket.webp",
             subtitle: "The World’s Smallest Quadcopter",
             title: "Elomus F18 Drone 3 Auto",
             description: "Ideal For Indoor Usage & Ultra Portable. 3 User Modes, Junior, Intermediate & Healess."
         },
         {
             category: "drones",
-            img: "https://cdn.shopify.com/s/files/1/0016/5412/8710/files/slider2-elomus1-1920x900_1920x900.progressive.jpg?v=1533173106",
+            img: "https://i.ibb.co/dc2r026/drone.webp",
             subtitle: "The World’s Smallest Quadcopter",
             title: "Elomus F18 Drone 3 Auto",
             description: "Ideal For Indoor Usage & Ultra Portable. 3 User Modes, Junior, Intermediate & Healess."

@@ -14,7 +14,7 @@ const FeaturedRocket = () => {
             </h1>
             <div class="hero min-h-screen ">
                 <div class="hero-content flex-col lg:flex-row gap-20">
-                    <img data-aos="zoom-in" src="https://d3ezn0y6hdgq62.cloudfront.net/newshepard-specs1.png" class="max-w-xs " alt='' />
+                    <img data-aos="zoom-in" src="https://i.ibb.co/PZt55Fn/newshepard-specs1.webp" class="max-w-xs " alt='' />
                     <div className='flex flex-col gap-12 max-w-sm'>
                         <div data-aos="fade-up-right">
                             <h1 class="text-2xl font-bold font-[Courgette] text-primary">Crew Capsule

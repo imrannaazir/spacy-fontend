@@ -11,7 +11,7 @@ const FeaturedDrone = () => {
     }, [])
     return (
         <div >
-            <img data-aos="fade-up" className='w-full lg:w-[80%] mx-auto' src="https://i.ibb.co/TkN4G2J/featured-drone.png" alt="" />
+            <img data-aos="fade-up" className='w-full lg:w-[80%] mx-auto' src="https://i.ibb.co/cFqWrcV/featured-drone.webp" alt="" />
         </div>
     );
 };
