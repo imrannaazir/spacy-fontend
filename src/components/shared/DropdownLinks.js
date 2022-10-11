@@ -58,25 +58,13 @@ const DropdownLinks = ({ user }) => {
                         to="/#drones" smooth>Drones</HashLink></li>
             </div>
             {/* orders */}
+
             <li className={liStyle}> <FontAwesomeIcon
                 className='hover:bg-transparent'
                 icon={faGear} />
                 <Link
                     className='hover:bg-transparent'
-                    to="/admin">Manage Items</Link></li>
-            {/* wishlist */}
-            <li className={liStyle}> <FontAwesomeIcon
-                className='hover:bg-transparent'
-                icon={faUserEdit} /><Link
-                    className='hover:bg-transparent'
-                    to="/admin/my-items">My Items</Link></li>
-            {/* wallet */}
-            <li className={liStyle}> <FontAwesomeIcon
-                className='hover:bg-transparent'
-                icon={faCartPlus} />
-                <Link
-                    className='hover:bg-transparent'
-                    to="/admin/add">Add Items</Link></li>
+                    to="/admin">Dashboard</Link></li>
             {/* logout */}
             <li className={`${liStyle} border-b-0`}> <FontAwesomeIcon
                 className='hover:bg-transparent'

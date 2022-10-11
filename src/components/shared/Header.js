@@ -1,31 +1,36 @@
 import React, { useState } from 'react';
 import logo from '../../assets/images/logo.png'
 import auth from '../../firebase.init';
-import { useAuthState } from 'react-firebase-hooks/auth';
 import NavLinks from './NavLinks';
 import DropdownLinks from './DropdownLinks';
-import Loading from './Loading';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
 
 const Header = () => {
-    const [nav, setNav] = useState(true);
-    const [user, loading] = useAuthState(auth);
-    // handle header bg by scrolling
-    const handleNavBg = () => {
-        if (window.scrollY > 80) {
-            setNav(false)
-        }
-        else {
-            setNav(true)
+    const location = useLocation()
+    const path = location.pathname
+    const [nav, setNav] = useState(path.length > 1 ? false : true);
+    const [user] = useAuthState(auth);
+    useEffect(() => {
+        // handle header bg by scrolling
+        const handleNavBg = () => {
+            if (window.scrollY > 80 || path.length > 1) {
+                setNav(false)
+            }
+            else {
+                setNav(true)
+            };
         };
-    };
-    window.addEventListener('scroll', handleNavBg);
-    //loading
-    if (loading) {
-        return <Loading />
-    };
+        window.addEventListener('scroll', handleNavBg);
+    }, [path])
 
-    return (
+
+    //loading
+
+
+    return !path.includes("admin") ? (
         <div class={`navbar text-base-100 transform duration-200 px-8 ${nav || "bg-primary"} fixed top-0 z-50 w-[100%]`} >
             {/* first part of navbar ,, logo here */}
             <div class="navbar-start">
@@ -74,7 +79,7 @@ const Header = () => {
 
 
         </div>
-    )
+    ) : null
 };
 
 export default Header;

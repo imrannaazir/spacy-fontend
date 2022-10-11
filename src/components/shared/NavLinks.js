@@ -1,14 +1,14 @@
 import React from 'react';
-import { HashLink } from 'react-router-hash-link';
+import { Link } from 'react-router-dom';
 
 const NavLinks = () => {
     return (
         <>
-            <li><HashLink to="/#home" smooth>Home</HashLink ></li>
-            <li><HashLink to="/#rockets" smooth>Rockets</HashLink ></li>
-            <li><HashLink to="/#drones" smooth>Drones</HashLink ></li>
-            <li><HashLink to="/#partners" smooth>Partners</HashLink ></li>
-            <li><HashLink to="/#join" smooth>Join</HashLink ></li>
+            <li><Link to="/" >Home</Link ></li>
+            <li><Link to="/all-products" >Our Products</Link ></li>
+            <li><Link to="/" >Drones</Link ></li>
+            <li><Link to="/about-us" >About Us</Link ></li>
+            <li><Link to="/contact-us" >Contact Us</Link ></li>
 
         </>
     );

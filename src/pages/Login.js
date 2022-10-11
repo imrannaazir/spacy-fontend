@@ -1,12 +1,13 @@
-import google from '../../assets/images/google.png'
-import { useAuthState, useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGithub, useSignInWithGoogle } from 'react-firebase-hooks/auth';
-import auth from '../../firebase.init'
-import { Link, useLocation, useNavigate } from 'react-router-dom';
-import Loading from '../shared/Loading';
-import axios from 'axios';
-import github from '../../assets/images/github.png';
-import { useState } from 'react';
-import toast from 'react-hot-toast';
+import axios from "axios";
+import { useState } from "react";
+import { useAuthState, useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGithub, useSignInWithGoogle } from "react-firebase-hooks/auth";
+import toast from "react-hot-toast";
+import { Link } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+import Loading from "../components/shared/Loading";
+import auth from "../firebase.init";
+import google from "../assets/images/google.png"
+import github from "../assets/images/github.png"
 
 const Login = () => {
     const navigate = useNavigate();
