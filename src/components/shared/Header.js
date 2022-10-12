@@ -30,33 +30,55 @@ const Header = () => {
 
             {/* last part of navbar here,,  */}
             <div class="my-0 py-0">
-                {/* Avatar  */}
-                {user ? <div class="dropdown dropdown-hover dropdown-end">
-                    <label tabindex="0" class="">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 lg:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+                {/* large screen */}
+                <div className='hidden lg:block'>
+                    {
+                        user ?
+                            <div class="dropdown dropdown-hover dropdown-end">
+                                <label tabindex="0" class="">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 lg:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
 
-                        {/*  avatar : placeholder */}
-                        {user?.photoURL ? <div class="avatar hidden lg:block">
-                            <div class="w-12 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-                                <img src={user?.photoURL} alt='' />
+                                    {/*  avatar : placeholder */}
+                                    {user?.photoURL ? <div class="avatar hidden lg:block">
+                                        <div class="w-12 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                                            <img src={user?.photoURL} alt='' />
+                                        </div>
+                                    </div>
+                                        :
+                                        <div class="avatar placeholder">
+                                            <div class="bg-neutral-focus text-neutral-content rounded-full w-12">
+                                                <span class="text-3xl uppercase">{user.email.slice(0, 1)}</span>
+                                            </div>
+                                        </div>}
+
+                                </label>
+                                <ul tabindex="0" class="dropdown-content  shadow-xl bg-base-100 text-primary rounded-xl  w-64">
+                                    {/* profile */}
+                                    <DropdownLinks user={user} />
+
+                                </ul>
                             </div>
-                        </div>
-                            :
-                            <div class="avatar placeholder">
-                                <div class="bg-neutral-focus text-neutral-content rounded-full w-12">
-                                    <span class="text-3xl uppercase">{user.email.slice(0, 1)}</span>
-                                </div>
-                            </div>}
+                            : <Link to="/login">Login</Link>}
 
-                    </label>
-                    <ul tabindex="0" class="dropdown-content  shadow-xl bg-base-100 text-primary rounded-xl  w-64">
-                        {/* profile */}
-                        <DropdownLinks user={user} />
-
-                    </ul>
                 </div>
-                    : <Link to="/login">Login</Link>}
-                {/* <NavigateAccount user={user} /> */}
+                {/* small screen */}
+                <div className='lg:hidden'>
+
+                    <div class="dropdown dropdown-hover dropdown-end">
+                        <label tabindex="0" class="">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 lg:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+
+                            {/*  avatar : placeholder */}
+                        </label>
+                        <ul tabindex="0" class="dropdown-content  shadow-xl bg-base-100 text-primary rounded-xl  w-64">
+                            {/* profile */}
+                            <DropdownLinks user={user} />
+
+                        </ul>
+                    </div>
+
+
+                </div>
             </div>
 
 
