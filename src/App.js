@@ -16,30 +16,67 @@ import Products from './pages/Products';
 import AboutUs from './pages/AboutUs';
 import ContactUs from './pages/ContactUs';
 import Footer from './components/shared/Footer';
+import Blogs from './pages/Blogs';
 
 function App() {
+  const allPublicRoutes = [
+    {
+      id: 1,
+      component: Home,
+      link: '/'
+    },
+    {
+      id: 2,
+      component: Products,
+      link: '/all-products'
+    },
+    {
+      id: 3,
+      component: Blogs,
+      link: '/blog'
+    },
+    {
+      id: 4,
+      component: AboutUs,
+      link: '/about-us'
+    },
+    {
+      id: 5,
+      component: ContactUs,
+      link: '/contact-us'
+    },
+    {
+      id: 6,
+      component: Login,
+      link: '/login'
+    },
+    {
+      id: 7,
+      component: SignUp,
+      link: '/signup'
+    },
+    {
+      id: 8,
+      component: NotFound,
+      link: '*'
+    },
+  ]
   return (
     <>
       <Header />
       < Toaster />
       <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/home' element={<Home />} />
-        <Route path='/all-products' element={<Products />} />
-        <Route path='/contact-us' element={<ContactUs />} />
-        <Route path='/about-us' element={<AboutUs />} />
+        {/* public routes */}
+        {
+          allPublicRoutes.map(route => <Route path={route.link} element={<route.component />} />)
+        }
         {/* dashboard */}
         <Route path='/admin' element={<RequireAuth><DashNav /></RequireAuth>} >
           <Route index element={<ManageInventories />} />
           <Route path='add' element={<Add />} />
           <Route path='my-items' element={<MyItems />} />
-
         </Route>
         <Route path='/update/:id' element={<RequireAuth><Update /></RequireAuth>} />
-
-        <Route path='/login' element={<Login />} />
-        <Route path='/signup' element={<SignUp />} />
-        <Route path='*' element={<NotFound />} />
       </Routes>
       <Footer />
     </ >

@@ -11,6 +11,11 @@ const NavLinks = () => {
             id: 1
         },
         {
+            name: "Blog",
+            link: "/blog",
+            id: 2
+        },
+        {
             name: "About Us",
             link: "/about-us",
             id: 2

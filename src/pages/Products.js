@@ -14,7 +14,7 @@ const Products = () => {
     // refetch()
 
     return (
-        <div className='mt-16 bg-base-100 h-full '>
+        <div className='my-16 bg-base-100 h-full '>
             <div className='flex items-end justify-center'>
                 <div className='w-[50px] h-[1px] bg-primary'></div>
                 <p className='text-center mt-10 text-xl font-[Courgette] text-primary '>Explore Our</p><div className='w-[50px] h-[1px] bg-primary'></div>
