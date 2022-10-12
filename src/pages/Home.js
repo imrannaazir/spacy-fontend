@@ -1,4 +1,3 @@
-import Footer from '../components/shared/Footer';
 import JoinNow from '../components/Home/JoinNow';
 import VideoSection from '../components/Home/VideoSection';
 import Contacts from '../components/Home/Contacts';
