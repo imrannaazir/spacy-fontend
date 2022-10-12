@@ -23,7 +23,7 @@ const NavLinks = () => {
     ]
     const navLinksStyles = ({ isActive }) => {
         return {
-            borderBottom: isActive ? "2px solid black" : "none",
+            borderBottom: isActive ? "2px solid white" : "none",
             height: "64px",
             display: "flex",
             alignItems: "center"

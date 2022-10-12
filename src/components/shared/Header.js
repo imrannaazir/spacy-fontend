@@ -13,7 +13,7 @@ const Header = () => {
     const [user] = useAuthState(auth);
 
     return !path.includes("admin") ? (
-        <div class={`flex items-center justify-between h-16 text-[17px] uppercase text-black transform duration-200 px-8 ${nav || "bg-primary"} fixed top-0 z-50 w-[100%] border-b border-primary`} >
+        <div class={`flex items-center justify-between h-16 text-[17px] uppercase text-white transform duration-200 px-8 ${nav || "bg-primary"} fixed top-0 z-50 w-[100%] border-b border-primary`} >
             {/* first part of navbar ,, logo here */}
             <div class="">
                 <a href='#home' class="">
