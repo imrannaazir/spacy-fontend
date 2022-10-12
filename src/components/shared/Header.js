@@ -16,7 +16,7 @@ const Header = () => {
         <div className={`flex items-center justify-between h-16 text-[17px] uppercase text-white transform duration-200 px-8 ${nav || "bg-primary"} fixed top-0 z-50 w-[100%] border-b border-primary`} >
             {/* first part of navbar ,, logo here */}
             <div className="">
-                <a href='#home' className="">
+                <a href='/' className="">
                     <img className='h-12' src={logo} alt="" />
                 </a>
             </div>
