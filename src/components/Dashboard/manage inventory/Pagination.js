@@ -17,7 +17,7 @@ const Pagination = ({ pageCount, setPage, page, setLimit }) => {
                     className='bg-primary p-1 rounded-lg mr-2'
                     onChange={e => setLimit(e.target.value)}>
                     <option value="5">5</option>
-                    <option value="10" selected>10</option>
+                    <option defaultValue="10" >10</option>
                     <option value="15">15</option>
                     <option value="20">20</option>
                 </select>

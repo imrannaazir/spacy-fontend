@@ -12,7 +12,7 @@ const Banner = ({ banner }) => {
     return (
         <div
             style={{ backgroundImage: `url(${banner?.img})` }}
-            class="hero bg-cover h-screen gap-10 bg-fixed"
+            className="hero bg-cover h-screen gap-10 bg-fixed"
         >
             <div className='w-full'>
                 <div data-aos="fade-right" className='flex flex-col justify-center items-start text-base-100 pl-4 lg:pl-24 lg:w-[50%] text-left'>

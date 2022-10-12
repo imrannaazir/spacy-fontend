@@ -10,7 +10,7 @@ const VideoSection = () => {
         })
     }, [])
     return (
-        <div data-aos="fade-up" class="bg-base-200 pb-16">
+        <div data-aos="fade-up" className="bg-base-200 pb-16">
             <div>
                 <div className='flex items-end justify-center'>
                     <div className='w-[50px] h-[1px] bg-primary'></div>
@@ -21,7 +21,7 @@ const VideoSection = () => {
                     className='text-center mb-6 text-2xl lg:text-4xl font-semibold text-black uppercase'>That makes history
                 </p>
             </div>
-            {<div class="flex flex-col lg:flex-row lg:w-[90%] mx-auto gap-6 mt-16 mb-24 ">
+            {<div className="flex flex-col lg:flex-row lg:w-[90%] mx-auto gap-6 mt-16 mb-24 ">
                 <iframe data-aos="zoom-in"
                     className='w-[80%] mx-auto h-[200px] md:h-[300px]  lg:h-[400px]  '
                     src="https://www.youtube.com/embed/TeVbYCIFVa8" title="YouTube video player"

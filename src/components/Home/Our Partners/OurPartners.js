@@ -15,11 +15,13 @@ import OurPartner from './OurPartner';
 const OurPartners = () => {
     const partners = [
         {
+            id: 1,
             name: "Elon Musk",
             company: "Space X",
             img: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Elon_Musk_Royal_Society_%28crop2%29.jpg/1200px-Elon_Musk_Royal_Society_%28crop2%29.jpg"
         },
         {
+            id: 2,
             name: "Jeff Bezos",
             company: "Blue Origin",
             img: "https://assets.change.org/photos/3/rh/bh/VWrhBhlKyGVOeyG-400x400-noPad.jpg?1528862483"
@@ -75,9 +77,9 @@ const OurPartners = () => {
                 className="mySwiper"
             >
                 {
-                    partners.map((partner, i) =>
+                    partners.map((partner) =>
                         <SwiperSlide>
-                            <OurPartner key={i} partner={partner} />
+                            <OurPartner key={partner.id} partner={partner} />
                         </SwiperSlide>
                     )
                 }

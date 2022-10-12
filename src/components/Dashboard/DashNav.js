@@ -7,19 +7,19 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const DashNav = () => {
     return (
-        <div class="drawer drawer-mobile">
-            <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
-            <div class="drawer-content flex flex-col items-center justify-center  bg-base-200">
+        <div className="drawer drawer-mobile">
+            <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
+            <div className="drawer-content flex flex-col items-center justify-center  bg-base-200">
                 {/* <!-- Page content here --> */}
                 <Outlet />
-                <label for="my-drawer-2" class="drawer-button lg:hidden absolute top-2 left-2 cursor-pointer z-50 text-white btn btn-outline">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" /></svg>
+                <label htmlFor="my-drawer-2" className="drawer-button lg:hidden absolute top-2 left-2 cursor-pointer z-50 text-white btn btn-outline">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h7" /></svg>
                 </label>
 
             </div>
-            <div class="drawer-side">
-                <label for="my-drawer-2" class="drawer-overlay"></label>
-                <ul class="menu p-4 overflow-y-auto w-60 bg-base-100 text-base-content flex flex-col justify-between">
+            <div className="drawer-side">
+                <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
+                <ul className="menu p-4 overflow-y-auto w-60 bg-base-100 text-base-content flex flex-col justify-between">
                     {/* <!-- Sidebar content here --> */}
                     <div>
                         <li className='text-2xl font-bold'><Link to="/">Space Y</Link></li>

@@ -1,8 +1,6 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 
 const Blogs = () => {
-    const navigate = useNavigate()
     const blogSites = [
         {
             id: 1,
@@ -25,14 +23,14 @@ const Blogs = () => {
     ]
     return (
         <div className='bg-white'>
-            <div className='my-16 '
+            <div
                 style={{ backgroundImage: `url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDnwtrg2yo4ACU1mtBjyuvUggeA0W1gi9H_w&usqp=CAU')` }}
-                class="hero bg-cover min-h-[300px] gap-10 "
+                className="hero bg-cover min-h-[300px] gap-10 my-16 "
             >
-                <div class="hero-overlay bg-opacity-75"></div>
-                <div class="hero-content text-center text-base-100  lg:flex-row-reverse">
-                    <div class="text-center lg:text-left">
-                        <h1 class="text-5xl font-bold">Blog</h1>
+                <div className="hero-overlay bg-opacity-75"></div>
+                <div className="hero-content text-center text-base-100  lg:flex-row-reverse">
+                    <div className="text-center lg:text-left">
+                        <h1 className="text-5xl font-bold">Blog</h1>
                     </div>
 
                 </div>

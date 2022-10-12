@@ -1,11 +1,10 @@
 import React from 'react';
 import toast from "react-hot-toast"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBlog, faCartPlus, faComputer, faDashboard, faFan, faGear, faHome, faInfo, faPen, faPhone, faPlane, faRightFromBracket, faRocket, faSortUp, faUserEdit, } from '@fortawesome/free-solid-svg-icons';
+import { faBlog, faComputer, faGear, faHome, faInfo, faPhone, faPlane, faRightFromBracket, faSortUp, } from '@fortawesome/free-solid-svg-icons';
 import { Link, useNavigate } from 'react-router-dom';
 import { signOut } from 'firebase/auth';
 import auth from '../../firebase.init';
-import { HashLink } from 'react-router-hash-link';
 import { useMyContext } from '../../context/MyContext';
 const DropdownLinks = ({ user }) => {
     const { setNav } = useMyContext()
@@ -60,15 +59,15 @@ const DropdownLinks = ({ user }) => {
                         <div className='flex flex-col justify-center items-center gap-4'>
                             {/* avatar : placeholder */}
                             {user?.photoURL ?
-                                <div class="avatar">
-                                    <div class="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                                <div className="avatar">
+                                    <div className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
                                         <img src={user?.photoURL} alt='' />
                                     </div>
                                 </div>
                                 :
-                                <div class="avatar placeholder">
-                                    <div class="bg-neutral-focus text-neutral-content rounded-full w-24">
-                                        <span class="text-3xl uppercase">{user?.email?.slice(0, 1)}</span>
+                                <div className="avatar placeholder">
+                                    <div className="bg-neutral-focus text-neutral-content rounded-full w-24">
+                                        <span className="text-3xl uppercase">{user?.email?.slice(0, 1)}</span>
                                     </div>
                                 </div>}
 

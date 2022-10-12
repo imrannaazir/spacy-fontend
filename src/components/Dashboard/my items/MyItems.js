@@ -38,7 +38,7 @@ const MyItems = () => {
     //is loading
     if (loading) return <Loading />
     return (
-        <div class="overflow-x-auto w-full min-h-screen bg-base-300">
+        <div className="overflow-x-auto w-full min-h-screen bg-base-300">
             <p className='bg-primary h-16 text-2xl font-semibold text-base-100 pl-20 flex items-center sticky top-0 left-0 z-50'>My Items</p>
 
             {rockets.length === 0 ?
@@ -54,7 +54,7 @@ const MyItems = () => {
                     </Link>
                 </div>
                 :
-                <table class="table w-[90%] mx-auto mt-6 bg">
+                <table className="table w-[90%] mx-auto mt-6 bg">
                     {/* <!-- head --> */}
                     <ManageTableHead />
                     <tbody>

@@ -14,6 +14,7 @@ import Banner from './Banner';
 const Slider = () => {
     const banners = [
         {
+            id: 1,
             category: "rockets",
             img: "https://i.ibb.co/tHV2SfT/rocket.webp",
             subtitle: "The World’s Smallest Quadcopter",
@@ -21,6 +22,7 @@ const Slider = () => {
             description: "Ideal For Indoor Usage & Ultra Portable. 3 User Modes, Junior, Intermediate & Healess."
         },
         {
+            id: 2,
             category: "drones",
             img: "https://i.ibb.co/dc2r026/drone.webp",
             subtitle: "The World’s Smallest Quadcopter",
@@ -44,7 +46,7 @@ const Slider = () => {
                 modules={[Autoplay, Pagination, Navigation]}
                 className="mySwiper"
             >
-                {banners.map((banner, i) => <SwiperSlide> <Banner key={i} banner={banner} /></SwiperSlide>)}
+                {banners.map((banner) => <SwiperSlide> <Banner key={banner.id} banner={banner} /></SwiperSlide>)}
 
             </Swiper>
         </>

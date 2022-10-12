@@ -74,7 +74,7 @@ function App() {
       <Routes>
         {/* public routes */}
         {
-          allPublicRoutes.map(route => <Route path={route.link} element={<route.component />} />)
+          allPublicRoutes.map(route => <Route key={route.link} path={route.link} element={<route.component />} />)
         }
         {/* dashboard */}
         <Route path='/admin' element={<RequireAuth><DashNav /></RequireAuth>} >

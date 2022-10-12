@@ -24,7 +24,7 @@ const Contacts = () => {
             </div>
             <div>
                 <div className='max-w-[800px] min-w-[320px] relative'>
-                    <input type="text" placeholder="Enter your email here..." class="input input-bordered w-full rounded-full input-info  " />
+                    <input type="text" placeholder="Enter your email here..." className="input input-bordered w-full rounded-full input-info  " />
                     <button className='btn btn-primary rounded-full text-base-100 absolute right-0'>Subscribe</button>
                 </div>
             </div>

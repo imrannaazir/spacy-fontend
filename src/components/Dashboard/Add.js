@@ -37,11 +37,11 @@ const Add = () => {
     return (
         <div className='w-full min-h-screen bg-base-200'>
             <p className='bg-primary h-16 text-2xl font-semibold text-base-100 pl-20 flex items-center sticky top-0 left-0 z-50 '>Add New Product</p>
-            <form onSubmit={handleSubmit(onSubmit)} class="flex flex-col bg-base-100 my-4 mx-6  p-4">
+            <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col bg-base-100 my-4 mx-6  p-4">
 
                 {/* Product name */}
                 <div className="form-control flex gap-2 max-w-xs lg:max-w-md ">
-                    <label class="input-group font-semibold">
+                    <label className="input-group font-semibold">
                         Product Name
                     </label>
                     <input
@@ -53,11 +53,11 @@ const Add = () => {
                         })}
                         type="text"
                         placeholder="Enter product name."
-                        class="input input-bordered rounded-sm"
+                        className="input input-bordered rounded-sm"
                     />
-                    <label class="label">
+                    <label className="label">
                         {errors.name?.type === "required" && (
-                            <span class="label-text-alt text-error">
+                            <span className="label-text-alt text-error">
                                 {errors.name.message}
                             </span>
                         )}
@@ -65,7 +65,7 @@ const Add = () => {
                 </div>
                 {/* Product category */}
                 <div className="form-control flex gap-2 max-w-xs lg:max-w-md ">
-                    <label class="input-group font-semibold">
+                    <label className="input-group font-semibold">
                         Product Category
                     </label>
                     <input
@@ -77,11 +77,11 @@ const Add = () => {
                         })}
                         type="text"
                         placeholder="Enter product category."
-                        class="input input-bordered rounded-sm"
+                        className="input input-bordered rounded-sm"
                     />
-                    <label class="label">
+                    <label className="label">
                         {errors.category?.type === "required" && (
-                            <span class="label-text-alt text-error">
+                            <span className="label-text-alt text-error">
                                 {errors.category.message}
                             </span>
                         )}
@@ -89,7 +89,7 @@ const Add = () => {
                 </div>
                 {/* Product description */}
                 <div className="form-control flex gap-2 max-w-xs lg:max-w-md ">
-                    <label class="input-group font-semibold">
+                    <label className="input-group font-semibold">
                         Product Description
                     </label>
                     <textarea
@@ -101,11 +101,11 @@ const Add = () => {
                         })}
                         type="text"
                         placeholder="Enter description"
-                        class="input input-bordered rounded-sm h-40"
+                        className="input input-bordered rounded-sm h-40"
                     />
-                    <label class="label">
+                    <label className="label">
                         {errors.description?.type === "required" && (
-                            <span class="label-text-alt text-error">
+                            <span className="label-text-alt text-error">
                                 {errors.description.message}
                             </span>
                         )}
@@ -114,7 +114,7 @@ const Add = () => {
 
                 {/* Product img */}
                 <div className="form-control flex gap-2 max-w-xs lg:max-w-md ">
-                    <label class="input-group font-semibold">
+                    <label className="input-group font-semibold">
                         Product URL
                     </label>
                     <input
@@ -126,11 +126,11 @@ const Add = () => {
                         })}
                         type="text"
                         placeholder="Enter product image url"
-                        class="input input-bordered rounded-sm"
+                        className="input input-bordered rounded-sm"
                     />
-                    <label class="label">
+                    <label className="label">
                         {errors.img?.type === "required" && (
-                            <span class="label-text-alt text-error">
+                            <span className="label-text-alt text-error">
                                 {errors.img.message}
                             </span>
                         )}
@@ -138,7 +138,7 @@ const Add = () => {
                 </div>
                 {/* Product name */}
                 <div className="form-control flex gap-2 max-w-xs lg:max-w-md ">
-                    <label class="input-group font-semibold">
+                    <label className="input-group font-semibold">
                         Supplier Name
                     </label>
                     <input
@@ -150,11 +150,11 @@ const Add = () => {
                         })}
                         type="text"
                         placeholder="Enter Supplier name"
-                        class="input input-bordered rounded-sm"
+                        className="input input-bordered rounded-sm"
                     />
-                    <label class="label">
+                    <label className="label">
                         {errors.supplier?.type === "required" && (
-                            <span class="label-text-alt text-error">
+                            <span className="label-text-alt text-error">
                                 {errors.supplier.message}
                             </span>
                         )}
@@ -162,7 +162,7 @@ const Add = () => {
                 </div>
                 {/* Product name */}
                 <div className="form-control flex gap-2 max-w-xs lg:max-w-md ">
-                    <label class="input-group font-semibold">
+                    <label className="input-group font-semibold">
                         Quantity
                     </label>
                     <input
@@ -174,11 +174,11 @@ const Add = () => {
                         })}
                         type="number"
                         placeholder="Enter quantity"
-                        class="input input-bordered rounded-sm"
+                        className="input input-bordered rounded-sm"
                     />
-                    <label class="label">
+                    <label className="label">
                         {errors.quantity?.type === "required" && (
-                            <span class="label-text-alt text-error">
+                            <span className="label-text-alt text-error">
                                 {errors.quantity.message}
                             </span>
                         )}
