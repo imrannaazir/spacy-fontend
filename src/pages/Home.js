@@ -21,7 +21,6 @@ const Home = () => {
             <OurPartners />
             <VideoSection />
             <Contacts />
-            <Footer />
         </>
     );
 };

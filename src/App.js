@@ -17,6 +17,7 @@ import AboutUs from './pages/AboutUs';
 import ContactUs from './pages/ContactUs';
 import Footer from './components/shared/Footer';
 import Blogs from './pages/Blogs';
+import Career from './pages/Career';
 
 function App() {
   const allPublicRoutes = [
@@ -59,6 +60,11 @@ function App() {
       id: 8,
       component: NotFound,
       link: '*'
+    },
+    {
+      id: 9,
+      component: Career,
+      link: '/career'
     },
   ]
   return (

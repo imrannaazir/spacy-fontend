@@ -18,12 +18,17 @@ const NavLinks = () => {
         {
             name: "About Us",
             link: "/about-us",
-            id: 2
+            id: 3
         },
         {
             name: "Contact Us",
             link: "/contact-us",
-            id: 2
+            id: 4
+        },
+        {
+            name: "Career",
+            link: "/career",
+            id: 5
         },
     ]
     const navLinksStyles = ({ isActive }) => {
