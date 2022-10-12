@@ -1,4 +1,5 @@
 import React from 'react';
+import toast from 'react-hot-toast';
 import { useQuery } from 'react-query';
 import Rockets from '../components/Home/Rockets';
 import Loading from '../components/shared/Loading';
@@ -9,7 +10,7 @@ const Products = () => {
         )
     )
     if (isLoading) return <Loading />
-    // if (error) return toast.error(error.message)
+    if (error) return toast.error(error.message)
     // refetch()
 
     return (

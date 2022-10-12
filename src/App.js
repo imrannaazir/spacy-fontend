@@ -15,6 +15,7 @@ import Header from './components/shared/Header';
 import Products from './pages/Products';
 import AboutUs from './pages/AboutUs';
 import ContactUs from './pages/ContactUs';
+import Footer from './components/shared/Footer';
 
 function App() {
   return (
@@ -40,7 +41,7 @@ function App() {
         <Route path='/signup' element={<SignUp />} />
         <Route path='*' element={<NotFound />} />
       </Routes>
-
+      <Footer />
     </ >
   );
 }

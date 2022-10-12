@@ -1,16 +1,8 @@
 import React from 'react';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-import { useEffect } from 'react';
 const Footer = () => {
-    //aos
-    useEffect(() => {
-        AOS.init({
-            duration: 3000
-        })
-    }, [])
+
     return (
-        <div data-aos="fade-up"
+        <div
             style={{ backgroundImage: `url('https://i.ibb.co/2qf4k88/footer.webp')` }}
             class="bg-cover  gap-10 ">
             <footer class="footer p-10  text-base-content">
