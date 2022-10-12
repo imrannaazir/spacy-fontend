@@ -1,53 +1,35 @@
-import React, { useState } from 'react';
+import React from 'react';
 import logo from '../../assets/images/logo.png'
 import auth from '../../firebase.init';
 import NavLinks from './NavLinks';
 import DropdownLinks from './DropdownLinks';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
-import { useLocation } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useMyContext } from '../../context/MyContext';
+
 
 const Header = () => {
-    const location = useLocation()
-    const path = location.pathname
-    const [nav, setNav] = useState(path.length > 1 ? false : true);
+    const { path, nav } = useMyContext()
     const [user] = useAuthState(auth);
-    useEffect(() => {
-        // handle header bg by scrolling
-        const handleNavBg = () => {
-            if (window.scrollY > 80 || path.length > 1) {
-                setNav(false)
-            }
-            else {
-                setNav(true)
-            };
-        };
-        window.addEventListener('scroll', handleNavBg);
-    }, [path])
-
-
-    //loading
-
 
     return !path.includes("admin") ? (
-        <div class={`navbar text-base-100 transform duration-200 px-8 ${nav || "bg-primary"} fixed top-0 z-50 w-[100%]`} >
+        <div class={`flex items-center justify-between h-16 text-[17px] uppercase text-black transform duration-200 px-8 ${nav || "bg-primary"} fixed top-0 z-50 w-[100%] border-b border-primary`} >
             {/* first part of navbar ,, logo here */}
-            <div class="navbar-start">
+            <div class="">
                 <a href='#home' class="">
                     <img className='h-12' src={logo} alt="" />
                 </a>
             </div>
 
             {/* middle part of nav bar ,,, navlinks here */}
-            <div class="navbar-center hidden lg:flex">
-                <ul class="menu menu-horizontal p-0">
+            <div class="hidden lg:flex h-[100%]">
+                <ul class="flex items-center gap-6  h-[100%]">
                     <NavLinks />
                 </ul>
             </div>
 
             {/* last part of navbar here,,  */}
-            <div class="navbar-end my-0 py-0">
+            <div class="my-0 py-0">
                 {/* Avatar  */}
                 {user ? <div class="dropdown dropdown-hover dropdown-end">
                     <label tabindex="0" class="">
