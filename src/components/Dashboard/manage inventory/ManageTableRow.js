@@ -11,7 +11,7 @@ const ManageTableRow = ({ rocket, rockets, setRockets, i }) => {
         const proceed = window.confirm('Are You sure delete the rocket??')
         if (proceed) {
             (async function () {
-                const { data } = await axios.delete(`https://limitless-beach-86891.herokuapp.com/rockets/${id}`)
+                const { data } = await axios.delete(`https://inventory-management-bk1x.onrender.com/rockets/${id}`)
                 const restRockets = await rockets.filter(rocket => rocket._id !== id)
                 console.log(data);
                 setRockets(restRockets);

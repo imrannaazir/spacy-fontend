@@ -11,7 +11,7 @@ const Update = () => {
     const navigate = useNavigate();
     const { id } = useParams();
     const { isLoading, error, data, refetch } = useQuery('productData', () =>
-        fetch(`https://limitless-beach-86891.herokuapp.com/rockets/${id}`).then(res =>
+        fetch(`https://inventory-management-bk1x.onrender.com/rockets/${id}`).then(res =>
             res.json()
         )
     )
@@ -33,7 +33,7 @@ const Update = () => {
             if (proceed) {
                 (async function () {
                     console.log(updatedRocket);
-                    const { data } = await axios.put(`https://limitless-beach-86891.herokuapp.com/rockets/${_id}`, updatedRocket)
+                    const { data } = await axios.put(`https://inventory-management-bk1x.onrender.com/rockets/${_id}`, updatedRocket)
                     refetch()
                     navigate('/');
                     console.log(data);
@@ -55,7 +55,7 @@ const Update = () => {
         if (proceed) {
             (async function () {
                 console.log(updatedRocket);
-                const { data } = await axios.put(`https://limitless-beach-86891.herokuapp.com/rockets/${_id}`, updatedRocket)
+                const { data } = await axios.put(`https://inventory-management-bk1x.onrender.com/rockets/${_id}`, updatedRocket)
             })();
             refetch()
             navigate('/')

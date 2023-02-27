@@ -6,7 +6,7 @@ import { useQuery } from 'react-query'
 
 const RocketsCategory = () => {
     const { isLoading, error, data, refetch } = useQuery('rocketsData', () =>
-        fetch('https://limitless-beach-86891.herokuapp.com/rockets').then(res =>
+        fetch('https://inventory-management-bk1x.onrender.com/rockets').then(res =>
             res.json()
         )
     )

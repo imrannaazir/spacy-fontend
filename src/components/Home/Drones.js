@@ -11,7 +11,7 @@ import { useQuery } from 'react-query'
 
 const Drones = () => {
     const { isLoading, error, data, refetch } = useQuery('productsData', () =>
-        fetch('https://limitless-beach-86891.herokuapp.com/drones').then(res =>
+        fetch('https://inventory-management-bk1x.onrender.com/drones').then(res =>
             res.json()
         )
     )

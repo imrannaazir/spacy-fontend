@@ -5,7 +5,7 @@ import Rockets from '../components/Home/Rockets';
 import Loading from '../components/shared/Loading';
 const Products = () => {
     const { isLoading, error, data, refetch } = useQuery('productsData', () =>
-        fetch('https://limitless-beach-86891.herokuapp.com/rockets').then(res =>
+        fetch('https://inventory-management-bk1x.onrender.com/rockets').then(res =>
             res.json()
         )
     )

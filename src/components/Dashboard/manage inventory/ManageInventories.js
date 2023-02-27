@@ -15,7 +15,7 @@ const ManageInventories = () => {
     useEffect(() => {
         (async function () {
             setLoading(true)
-            const { data } = await axios.get(`https://limitless-beach-86891.herokuapp.com/rockets?page=${page}&limit=${limit}`)
+            const { data } = await axios.get(`https://inventory-management-bk1x.onrender.com/rockets?page=${page}&limit=${limit}`)
             setRockets(data);
             setLoading(false)
         })();
@@ -24,7 +24,7 @@ const ManageInventories = () => {
     useEffect(() => {
         (async function () {
             setLoading(true)
-            const { data } = await axios.get('https://limitless-beach-86891.herokuapp.com/rocketsCount')
+            const { data } = await axios.get('https://inventory-management-bk1x.onrender.com/rocketsCount')
             const count = data.count;
             const pages = Math.ceil(count / limit);
             setPageCount(pages);

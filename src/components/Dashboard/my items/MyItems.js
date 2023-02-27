@@ -18,7 +18,7 @@ const MyItems = () => {
         (async function () {
             try {
                 setLoading(true)
-                const { data } = await axios.get(`https://limitless-beach-86891.herokuapp.com/myrockets?email=${user.email}`, {
+                const { data } = await axios.get(`https://inventory-management-bk1x.onrender.com/myrockets?email=${user.email}`, {
                     headers: {
                         authorization: `Bearer ${localStorage.getItem('accessToken')}`
                     }

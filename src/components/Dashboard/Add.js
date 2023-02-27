@@ -26,7 +26,7 @@ const Add = () => {
         const newProduct = { ...data, email: user?.email }
         console.log(newProduct);
         (async function () {
-            const { data } = await axios.post('https://limitless-beach-86891.herokuapp.com/rockets', newProduct)
+            const { data } = await axios.post('https://inventory-management-bk1x.onrender.com/rockets', newProduct)
             console.log(data);
         })();
         reset();

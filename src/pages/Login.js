@@ -93,7 +93,7 @@ const Login = () => {
         (async function () {
             const email = user?.email;
             if (email) {
-                const { data } = await axios.post('https://limitless-beach-86891.herokuapp.com/login', { email })
+                const { data } = await axios.post('https://inventory-management-bk1x.onrender.com/login', { email })
                 localStorage.setItem('accessToken', data.accessToken)
             };
         })();
